@@ -23,15 +23,15 @@
  * SOFTWARE.
  */
 
-import {Resolution} from '../types/Resolution';
+import type {ResolutionDefinition} from '../types/ResolutionDefinition';
 
 /**
- * Supported resolutions.
+ * Recognized resolutions.
  *
  * @group Resolution
  * @category Internal
  */
-export const resolutions: Resolution[] = [
+export const resolutions: ResolutionDefinition[] = [
   {
     name: '12K',
     group: '12K',

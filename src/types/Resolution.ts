@@ -23,35 +23,27 @@
  * SOFTWARE.
  */
 
+import type {ResolutionDefinition} from './ResolutionDefinition';
+
 /**
- * Resolution definition.
+ * Resolution result.
  *
  * @group Resolution
  * @category Types
  */
-export interface Resolution {
+export interface Resolution extends ResolutionDefinition {
   /**
-   * Name of the resolution.
+   * Actual raw given width.
    */
-  name: string
+  actualWidth: number
 
   /**
-   * Simplified grouped resolution name.
+   * Actual raw given height.
    */
-  group: string
+  actualHeight: number
 
   /**
-   * Width.
+   * Actual given aspect ratio.
    */
-  width: number
-
-  /**
-   * Height.
-   */
-  height: number
-
-  /**
-   * Aspect ratio.
-   */
-  aspectRatio?: string
+  actualAspectRatio?: string
 }

@@ -1,9 +1,10 @@
 Resolution
 =====
 
-Identify pixel resolutions and dimension strings. Library for parsing given pixel resolution values and returning
-resulting aspect ratios, or human-readable short name identifiers. Written in JavaScript and supports both client-side
-browser and Node.js backend contexts.
+Identify pixel resolutions and dimension strings. Offers a library for parsing given pixel resolution values and
+returning  resulting aspect ratios, or human-readable short name identifiers. The main use-case for the library would
+be converting raw resolution  dimensions to 1080p, 4K and 8K, and so-on, identifiers. Written in JavaScript and supports
+both client-side browser and Node.js backend contexts.
 
 Install
 -----
@@ -32,11 +33,11 @@ import {parse} from '@gocom/resolution';
 const resolution = parse('1920x1080');
 
 console.log(
-  resolution.name,
-  resolution.group,
-  resolution.width,
-  resolution.height,
-  resolution.aspectRatio,
+  resolution?.name, // 1080p
+  resolution?.group, // 1080p
+  resolution?.width, // 1920
+  resolution?.height, // 1080
+  resolution?.aspectRatio, // 16:9
 );
 ```
 

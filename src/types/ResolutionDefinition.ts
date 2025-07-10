@@ -23,44 +23,35 @@
  * SOFTWARE.
  */
 
-import type {Resolution} from '../types/Resolution';
-import {getResolution} from "./Resolution";
-
 /**
- * Parses the given dimensions string.
+ * Resolution definition.
  *
- * @param {string} dimensions Dimensions string, two positive integers separated from each other with `x`.
- * @return {Resolution|undefined} Returns the results as {@link Resolution} object, or undefined if the given dimensions
- * string could not be parsed.
  * @group Resolution
- * @category API
- * @example
- * Parse the given `1920x1080` resolution string, and returns results as {@link Resolution} object:
- * ```ts
- * import {parse} from '@gocom/resolution';
- *
- * const resolution = parse('1920x1080');
- * ```
- * If the dimensions string is not a supported dimension string, the function returns `undefined`:
- * ```ts
- * import {parse} from '@gocom/resolution';
- *
- * const resolution = parse('');
- * ```
+ * @category Types
  */
-export const parse = (
-  dimensions: string
-): Resolution|undefined => {
-  if (dimensions) {
-    const [width, height] = dimensions.split(/[^0-9.,]+/i);
+export interface ResolutionDefinition {
+  /**
+   * Name of the resolution.
+   */
+  name: string
 
-    if (width && height) {
-      return getResolution(
-        Number(width),
-        Number(height)
-      );
-    }
-  }
+  /**
+   * Simplified grouped resolution name.
+   */
+  group: string
 
-  return undefined;
-};
+  /**
+   * Width.
+   */
+  width: number
+
+  /**
+   * Height.
+   */
+  height: number
+
+  /**
+   * Aspect ratio.
+   */
+  aspectRatio?: string
+}

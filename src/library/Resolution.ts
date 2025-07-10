@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-import {Resolution} from '../types/Resolution';
+import type {Resolution} from '../types/Resolution';
 import {resolutions} from './Registry';
 import {getAspectRatio} from './AspectRatio';
 
@@ -49,6 +49,12 @@ export const getResolution = (
     () => getAspectRatio(width, height),
   ];
 
+  const additionResult= {
+    actualWidth: width,
+    actualHeight: height,
+    actualAspectRatio: aspectRatio,
+  };
+
   for (const tryAspectRatio of tryAspectRatios) {
     const ratio = tryAspectRatio();
 
@@ -63,16 +69,28 @@ export const getResolution = (
       });
 
       if (result) {
-        return result;
+        return {
+          ...result,
+          ...additionResult,
+        };
       }
     }
   }
 
-  return (
+  const result = (
     resolutions.find((resolution) => {
       return resolution.width === width && resolution.height === height;
     }) || resolutions.find((resolution) => {
       return width >= resolution.width && height >= resolution.height;
     })
   );
+
+  if (result) {
+    return {
+      ...result,
+      ...additionResult,
+    };
+  }
+
+  return undefined;
 };

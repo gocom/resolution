@@ -23,44 +23,28 @@
  * SOFTWARE.
  */
 
-import type {Resolution} from '../types/Resolution';
-import {getResolution} from "./Resolution";
+import {parse} from '../../index';
+import type {Resolution} from '../../index';
 
-/**
- * Parses the given dimensions string.
- *
- * @param {string} dimensions Dimensions string, two positive integers separated from each other with `x`.
- * @return {Resolution|undefined} Returns the results as {@link Resolution} object, or undefined if the given dimensions
- * string could not be parsed.
- * @group Resolution
- * @category API
- * @example
- * Parse the given `1920x1080` resolution string, and returns results as {@link Resolution} object:
- * ```ts
- * import {parse} from '@gocom/resolution';
- *
- * const resolution = parse('1920x1080');
- * ```
- * If the dimensions string is not a supported dimension string, the function returns `undefined`:
- * ```ts
- * import {parse} from '@gocom/resolution';
- *
- * const resolution = parse('');
- * ```
- */
-export const parse = (
-  dimensions: string
-): Resolution|undefined => {
-  if (dimensions) {
-    const [width, height] = dimensions.split(/[^0-9.,]+/i);
+test('Parse 1920x1080', () => {
+  const actual = parse('1920x1080');
 
-    if (width && height) {
-      return getResolution(
-        Number(width),
-        Number(height)
-      );
-    }
-  }
+  const expected: Resolution = {
+    name: '1080p',
+    group: '1080p',
+    width: 1920,
+    height: 1080,
+    aspectRatio: '16:9',
+    actualWidth: 1920,
+    actualHeight: 1080,
+    actualAspectRatio: undefined,
+  };
 
-  return undefined;
-};
+  expect(actual).toEqual(expected);
+});
+
+test('Parse given an empty string', () => {
+  const actual = parse('');
+
+  expect(actual).toBeUndefined();
+});
