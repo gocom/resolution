@@ -23,22 +23,45 @@
  * SOFTWARE.
  */
 
-import type {Resolution} from '../types/Resolution';
-import {resolutions} from './Registry';
+import type {GetResolutionOptions, Resolution} from '../types/Resolution';
+import {resolutions} from './ResolutionDefinition';
 import {getAspectRatio} from './AspectRatio';
 
 /**
  * Gets resolution definition for the given width and height.
  *
+ * Identifies the given resolution based on the given options, returning matching {@link Resolution}
+ * definition.
+ *
+ * @param {GetResolutionOptions} options Options
+ * @return {Resolution|undefined} Returns either {@link Resolution} object, or undefined if the resolution could not
+ * be recognized.
  * @group Resolution
  * @category API
+ * @example
+ * The following would detect `3072x1536` resolution, and returns results as {@link Resolution} object:
+ * ```ts
+ * import {getResolution} from '@gocom/resolution';
+ *
+ * const resolution = getResolution({
+ *   width: 3072,
+ *   height: 1536,
+ * });
+ *
+ * console.log(resolution?.name, resolution?.group);
+ * ```
+ * The {@link Resolution.name} and {@link Resolution.group} can be used to display the resolutions human-readable
+ * name.
+ *
  */
-export const getResolution = (
-  width: number,
-  height: number,
-  aspectRatio?: string|undefined
-): Resolution|undefined => {
-  if (width <= 0 || height <= 0) {
+export const getResolution = (options: GetResolutionOptions): Resolution|undefined => {
+  const {
+    width,
+    height,
+    aspectRatio
+  } = options;
+
+  if (!width || !height || width <= 0 || height <= 0) {
     return undefined;
   }
 
@@ -46,7 +69,7 @@ export const getResolution = (
 
   const tryAspectRatios = [
     () => aspectRatio,
-    () => getAspectRatio(width, height),
+    () => getAspectRatio({width, height}),
   ];
 
   const additionResult= {

@@ -30,13 +30,13 @@ The following would parse the given resolution string, and returning results as 
 ```typescript
 import {parse} from '@gocom/resolution';
 
-const resolution = parse('1920x1080');
+const resolution = parse('7680x4320');
 
 console.log(
-  resolution?.name, // 1080p
-  resolution?.group, // 1080p
-  resolution?.width, // 1920
-  resolution?.height, // 1080
+  resolution?.name, // 8K UHD
+  resolution?.group, // 8K
+  resolution?.width, // 7680
+  resolution?.height, // 4320
   resolution?.aspectRatio, // 16:9
 );
 ```

@@ -27,7 +27,10 @@ import {getResolution} from '../../index';
 import type {Resolution} from '../../index';
 
 test('Parse 1920x1080', () => {
-  const actual = getResolution(1920, 1080);
+  const actual = getResolution({
+    width: 1920,
+    height: 1080,
+  });
 
   const expected: Resolution = {
     name: '1080p',
@@ -44,13 +47,19 @@ test('Parse 1920x1080', () => {
 });
 
 test('Parse 1x1', () => {
-  const actual = getResolution(1, 1);
+  const actual = getResolution({
+    width: 1,
+    height: 1,
+  });
 
   expect(actual).toBeUndefined();
 });
 
 test('Parse 1920x920', () => {
-  const actual = getResolution(1920, 920);
+  const actual = getResolution({
+    width: 1920,
+    height: 920,
+  });
 
   const expected: Resolution = {
     name: '1080p',
@@ -67,37 +76,55 @@ test('Parse 1920x920', () => {
 });
 
 test('Given zero height', () => {
-  const actual = getResolution(1920, 0);
+  const actual = getResolution({
+    width: 1920,
+    height: 0,
+  });
 
   expect(actual).toBeUndefined();
 });
 
 test('Given negative height', () => {
-  const actual = getResolution(1920, -5);
+  const actual = getResolution({
+    width: 1920,
+    height: -5,
+  });
 
   expect(actual).toBeUndefined();
 });
 
 test('Given zero width', () => {
-  const actual = getResolution(0, 1080);
+  const actual = getResolution({
+    width: 0,
+    height: 1080,
+  });
 
   expect(actual).toBeUndefined();
 });
 
 test('Given negative width', () => {
-  const actual = getResolution(-5, 1080);
+  const actual = getResolution({
+    width: -5,
+    height: 1080,
+  });
 
   expect(actual).toBeUndefined();
 });
 
 test('Given zero width and height', () => {
-  const actual = getResolution(0, 0);
+  const actual = getResolution({
+    width: 0,
+    height: 0,
+  });
 
   expect(actual).toBeUndefined();
 });
 
 test('Given negative width and height', () => {
-  const actual = getResolution(-5, -5);
+  const actual = getResolution({
+    width: -5,
+    height: -5,
+  });
 
   expect(actual).toBeUndefined();
 });

@@ -24,6 +24,7 @@
  */
 
 import type {ResolutionDefinition} from './ResolutionDefinition';
+import type {AspectRatio} from './AspectRatio';
 
 /**
  * Resolution result.
@@ -33,17 +34,51 @@ import type {ResolutionDefinition} from './ResolutionDefinition';
  */
 export interface Resolution extends ResolutionDefinition {
   /**
-   * Actual raw given width.
+   * Actual given width.
    */
   actualWidth: number
 
   /**
-   * Actual raw given height.
+   * Actual given height.
    */
   actualHeight: number
 
   /**
    * Actual given aspect ratio.
    */
-  actualAspectRatio?: string
+  actualAspectRatio?: AspectRatio
+}
+
+/**
+ * Get resolution options.
+ *
+ * @group Resolution
+ * @category Types
+ */
+export interface GetResolutionOptions {
+  /**
+   * Pixel width.
+   *
+   * A matching named resolution definition is looked up by the given width.
+   */
+  width: number
+
+  /**
+   * Pixel height.
+   *
+   * A matching named resolution definition is looked up by the given height.
+   */
+  height: number
+
+  /**
+   * Optional aspect ratio.
+   *
+   * A matching named resolution definition is looked up by the aspect ratio string.
+   * The aspect ratio is string consisting of two integers separated by colon (`:`),
+   * for example `16:9`.
+   *
+   * If no aspect ratio is provided, the looked up aspect ratio is calculated automatically
+   * from the width and height.
+   */
+  aspectRatio?: AspectRatio
 }

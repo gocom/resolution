@@ -24,24 +24,25 @@
  */
 
 import type {Resolution} from '../types/Resolution';
-import {getResolution} from "./Resolution";
+import {getResolution} from './Resolution';
 
 /**
  * Parses the given dimensions string.
  *
- * @param {string} dimensions Dimensions string, two positive integers separated from each other with `x`.
+ * @param {string} dimensions Dimensions string, two positive integers separated from each other with `x`. For example
+ * `1920x1080`, `6144x3072` and so-on.
  * @return {Resolution|undefined} Returns the results as {@link Resolution} object, or undefined if the given dimensions
  * string could not be parsed.
  * @group Resolution
  * @category API
  * @example
- * Parse the given `1920x1080` resolution string, and returns results as {@link Resolution} object:
+ * The following parses the given `1920x1080` resolution string, and returns results as {@link Resolution} object:
  * ```ts
  * import {parse} from '@gocom/resolution';
  *
  * const resolution = parse('1920x1080');
  * ```
- * If the dimensions string is not a supported dimension string, the function returns `undefined`:
+ * If the given dimensions parameter is not a supported dimension string, the function returns `undefined`:
  * ```ts
  * import {parse} from '@gocom/resolution';
  *
@@ -52,15 +53,27 @@ export const parse = (
   dimensions: string
 ): Resolution|undefined => {
   if (dimensions) {
-    const [width, height] = dimensions.split(/[^0-9.,]+/i);
+    const [width, height] = dimensions.split(/[^0-9.,]+/);
 
     if (width && height) {
-      return getResolution(
-        Number(width),
-        Number(height)
-      );
+      return getResolution({
+        width: asNumber(width),
+        height: asNumber(height),
+      });
     }
   }
 
   return undefined;
+};
+
+/**
+ * Converts the given string to a number.
+ *
+ * Strips away non-numbers from the string and then casts the string to a
+ * number.
+ *
+ * @return {number} Returns `0` if the given input can not be converted to a number.
+ */
+const asNumber = (input: string) => {
+  return Number(input.replace(/[^0-9]/g, '')) || 0;
 };

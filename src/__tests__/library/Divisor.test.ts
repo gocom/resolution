@@ -30,3 +30,15 @@ test('Calculate 1920x1080', () => {
 
   expect(actual).toEqual(120);
 });
+
+test('Calculate 1x1', () => {
+  const actual = calculateGreatestCommonDivisor(1, 1);
+
+  expect(actual).toEqual(1);
+});
+
+test('isNaN', () => {
+  const actual = calculateGreatestCommonDivisor(NaN, NaN);
+
+  expect(actual).toEqual(0);
+});

@@ -23,57 +23,33 @@
  * SOFTWARE.
  */
 
-import {parse} from '../../index';
-import type {Resolution} from '../../index';
+/**
+ * Aspect ratio.
+ *
+ * Aspect ratio in a string presentation, consisting of two numbers separated
+ * from each other with a colon (`:`); For example, `16:9`, `4:3`, `2:2`, `1.90:1` and
+ * so-on.
+ */
+export type AspectRatio = `${number}:${number}` | string;
 
-test('Parse 1920x1080', () => {
-  const actual = parse('1920x1080');
+/**
+ * Get aspect ratio options.
+ *
+ * @group Resolution
+ * @category Types
+ */
+export interface GetAspectRatioOptions {
+  /**
+   * Pixel width.
+   *
+   * A width from which the aspect ratio string is calculated from.
+   */
+  width: number
 
-  const expected: Resolution = {
-    name: '1080p',
-    group: '1080p',
-    width: 1920,
-    height: 1080,
-    aspectRatio: '16:9',
-    actualWidth: 1920,
-    actualHeight: 1080,
-    actualAspectRatio: undefined,
-  };
-
-  expect(actual).toEqual(expected);
-});
-
-test('Parse 0x0', () => {
-  const actual = parse('0x0');
-
-  expect(actual).toBeUndefined();
-});
-
-test('Parse given an empty string', () => {
-  const actual = parse('');
-
-  expect(actual).toBeUndefined();
-});
-
-test('Invalid numbers', () => {
-  const actual = parse('1920xinvalid');
-
-  expect(actual).toBeUndefined();
-});
-
-test('Values contain number separators', () => {
-  const actual = parse('1,920x1,080');
-
-  const expected: Resolution = {
-    name: '1080p',
-    group: '1080p',
-    width: 1920,
-    height: 1080,
-    aspectRatio: '16:9',
-    actualWidth: 1920,
-    actualHeight: 1080,
-    actualAspectRatio: undefined,
-  };
-
-  expect(actual).toEqual(expected);
-});
+  /**
+   * Pixel height.
+   *
+   * A height from which the aspect ratio string is calculated from.
+   */
+  height: number
+}

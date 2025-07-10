@@ -42,5 +42,11 @@ export {
 } from './library/Resolution';
 
 export type {
+  AspectRatio,
+  GetAspectRatioOptions,
+} from './types/AspectRatio';
+
+export type {
+  GetResolutionOptions,
   Resolution,
 } from './types/Resolution';

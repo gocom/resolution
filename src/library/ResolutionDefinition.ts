@@ -226,7 +226,7 @@ export const resolutions: ResolutionDefinition[] = [
     group: '4K',
     width: 4096,
     height: 1716,
-    aspectRatio: '2:39∶1',
+    aspectRatio: '2.39∶1',
   },
   {
     name: '4K DCP',

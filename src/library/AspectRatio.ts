@@ -24,20 +24,55 @@
  */
 
 import {calculateGreatestCommonDivisor} from './Divisor';
+import type {AspectRatio, GetAspectRatioOptions} from '../types/AspectRatio';
 
 /**
- * Calculates aspect ratio for the given values.
+ * Calculates aspect ratio string from the given width and height.
  *
+ * Returns the aspect ratio as a string consisting of two numbers separated
+ * from each other with a colon (`:`); For example, `16:9`, `4:3`, `2:2` and
+ * so-on.
+ *
+ * @param {GetAspectRatioOptions} options Options
+ * @return {AspectRatio|undefined} Either aspect ratio string, or `undefined` if calculating aspect ratio failed for
+ * the given options.
  * @group Resolution
  * @category API
+ * @example
+ * Give the function {@link GetAspectRatioOptions.width} and {@link GetAspectRatioOptions.height}:
+ * ```ts
+ * import {getAspectRatio} from '@gocom/resolution';
+ *
+ * const aspectRatio = getAspectRatio({
+ *   width: 3072,
+ *   height: 1536,
+ * });
+ * ```
+ * In the above, the `aspectRatio` variable would contain `2:1`. If the given options are invalid, the function
+ * returns `undefined`:
+ * ```ts
+ * import {getAspectRatio} from '@gocom/resolution';
+ *
+ * const aspectRatio = getAspectRatio({
+ *   width: 0,
+ *   height: 0,
+ * });
+ * ```
  */
-export const getAspectRatio = (
-  width: number,
-  height: number,
-): string => {
-  const gcd = calculateGreatestCommonDivisor(width, height);
-  const widthRatio = width / gcd;
-  const heightRatio = height / gcd;
+export const getAspectRatio = (options: GetAspectRatioOptions): AspectRatio|undefined => {
+  const {
+    width,
+    height,
+  } = options;
 
-  return `${widthRatio}:${heightRatio}`;
+  const gcd = calculateGreatestCommonDivisor(width, height);
+
+  if (gcd) {
+    const widthRatio = width / gcd;
+    const heightRatio = height / gcd;
+
+    return `${widthRatio}:${heightRatio}`;
+  }
+
+  return undefined;
 };

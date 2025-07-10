@@ -26,6 +26,9 @@
 /**
  * Calculates common divisor between two values.
  *
+ * @param {number} valueA The first value
+ * @param {number} valueB The second value
+ * @return {number} Returns `0` if calculating the common divisor is not possible for the two values
  * @group Resolution
  * @category API
  */
@@ -33,7 +36,9 @@ export const calculateGreatestCommonDivisor = (
   valueA: number,
   valueB: number,
 ): number => {
-  return (valueB === 0)
-    ? valueA
-    : calculateGreatestCommonDivisor(valueB, valueA % valueB);
+  if (!valueA || !valueB || valueA <= 0 || valueB <= 0) {
+    return valueA || 0;
+  }
+
+  return calculateGreatestCommonDivisor(valueB, valueA % valueB);
 };

@@ -23,6 +23,8 @@
  * SOFTWARE.
  */
 
+import type {AspectRatio} from './AspectRatio';
+
 /**
  * Resolution definition.
  *
@@ -31,27 +33,41 @@
  */
 export interface ResolutionDefinition {
   /**
-   * Name of the resolution.
+   * Human-readable name identification of the resolution.
+   *
+   * For example, `8K UHD`, `8K`, `4K`, `1080p`, `480p` and so-on.
    */
   name: string
 
   /**
    * Simplified grouped resolution name.
+   *
+   * For instance, if the {@link ResolutionDefinition.name} is `8K UHD`, this will be `8K`.
    */
   group: string
 
   /**
-   * Width.
+   * Defined pixel width.
+   *
+   * Resolutions definition's pixel width threshold.
    */
   width: number
 
   /**
-   * Height.
+   * Defined pixel height.
+   *
+   * Resolutions definition's pixel height threshold.
    */
   height: number
 
   /**
-   * Aspect ratio.
+   * Defined aspect ratio.
+   *
+   * Resolutions definition's aspect ratio.
+   *
+   * Returns the aspect ratio as a string consisting of two numbers separated
+   * from each other with a colon (`:`); For example, `16:9`, `4:3`, `2:2` and
+   * so-on.
    */
-  aspectRatio?: string
+  aspectRatio?: AspectRatio
 }
