@@ -6,6 +6,10 @@
 
 Public API.
 
+## Type Aliases
+
+- [AspectRatio](type-aliases/AspectRatio.md)
+
 ## Resolution
 
 ### API
@@ -16,4 +20,6 @@ Public API.
 
 ### Types
 
+- [GetAspectRatioOptions](interfaces/GetAspectRatioOptions.md)
+- [GetResolutionOptions](interfaces/GetResolutionOptions.md)
 - [Resolution](interfaces/Resolution.md)

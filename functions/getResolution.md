@@ -6,26 +6,42 @@
 
 # Function: getResolution()
 
-> **getResolution**(`width`, `height`, `aspectRatio?`): `undefined` \| [`Resolution`](../interfaces/Resolution.md)
+> **getResolution**(`options`): `undefined` \| [`Resolution`](../interfaces/Resolution.md)
 
-Defined in: [library/Resolution.ts:36](https://github.com/gocom/resolution/blob/3830240e7905e88d58561fac6c8329716b6bbabd/src/library/Resolution.ts#L36)
+Defined in: [library/Resolution.ts:57](https://github.com/gocom/resolution/blob/a0eb3233e4882006da98f3b482c89335042335df/src/library/Resolution.ts#L57)
 
 Gets resolution definition for the given width and height.
 
+Identifies the given resolution based on the given options, returning matching [Resolution](../interfaces/Resolution.md)
+definition.
+
 ## Parameters
 
-### width
+### options
 
-`number`
+[`GetResolutionOptions`](../interfaces/GetResolutionOptions.md)
 
-### height
-
-`number`
-
-### aspectRatio?
-
-`string`
+Options
 
 ## Returns
 
 `undefined` \| [`Resolution`](../interfaces/Resolution.md)
+
+Returns either [Resolution](../interfaces/Resolution.md) object, or undefined if the resolution could not
+be recognized.
+
+## Example
+
+The following would detect `3072x1536` resolution, and returns results as [Resolution](../interfaces/Resolution.md) object:
+```ts
+import {getResolution} from '@gocom/resolution';
+
+const resolution = getResolution({
+  width: 3072,
+  height: 1536,
+});
+
+console.log(resolution?.name, resolution?.group);
+```
+The [Resolution.name](../interfaces/Resolution.md#name) and [Resolution.group](../interfaces/Resolution.md#group) can be used to display the resolutions human-readable
+name.

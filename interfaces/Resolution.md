@@ -6,7 +6,7 @@
 
 # Interface: Resolution
 
-Defined in: [types/Resolution.ts:34](https://github.com/gocom/resolution/blob/3830240e7905e88d58561fac6c8329716b6bbabd/src/types/Resolution.ts#L34)
+Defined in: [types/Resolution.ts:35](https://github.com/gocom/resolution/blob/a0eb3233e4882006da98f3b482c89335042335df/src/types/Resolution.ts#L35)
 
 Resolution result.
 
@@ -20,7 +20,7 @@ Resolution result.
 
 > `optional` **actualAspectRatio**: `string`
 
-Defined in: [types/Resolution.ts:48](https://github.com/gocom/resolution/blob/3830240e7905e88d58561fac6c8329716b6bbabd/src/types/Resolution.ts#L48)
+Defined in: [types/Resolution.ts:49](https://github.com/gocom/resolution/blob/a0eb3233e4882006da98f3b482c89335042335df/src/types/Resolution.ts#L49)
 
 Actual given aspect ratio.
 
@@ -30,9 +30,9 @@ Actual given aspect ratio.
 
 > **actualHeight**: `number`
 
-Defined in: [types/Resolution.ts:43](https://github.com/gocom/resolution/blob/3830240e7905e88d58561fac6c8329716b6bbabd/src/types/Resolution.ts#L43)
+Defined in: [types/Resolution.ts:44](https://github.com/gocom/resolution/blob/a0eb3233e4882006da98f3b482c89335042335df/src/types/Resolution.ts#L44)
 
-Actual raw given height.
+Actual given height.
 
 ***
 
@@ -40,9 +40,9 @@ Actual raw given height.
 
 > **actualWidth**: `number`
 
-Defined in: [types/Resolution.ts:38](https://github.com/gocom/resolution/blob/3830240e7905e88d58561fac6c8329716b6bbabd/src/types/Resolution.ts#L38)
+Defined in: [types/Resolution.ts:39](https://github.com/gocom/resolution/blob/a0eb3233e4882006da98f3b482c89335042335df/src/types/Resolution.ts#L39)
 
-Actual raw given width.
+Actual given width.
 
 ***
 
@@ -50,9 +50,15 @@ Actual raw given width.
 
 > `optional` **aspectRatio**: `string`
 
-Defined in: [types/ResolutionDefinition.ts:56](https://github.com/gocom/resolution/blob/3830240e7905e88d58561fac6c8329716b6bbabd/src/types/ResolutionDefinition.ts#L56)
+Defined in: [types/ResolutionDefinition.ts:72](https://github.com/gocom/resolution/blob/a0eb3233e4882006da98f3b482c89335042335df/src/types/ResolutionDefinition.ts#L72)
 
-Aspect ratio.
+Defined aspect ratio.
+
+Resolutions definition's aspect ratio.
+
+Returns the aspect ratio as a string consisting of two numbers separated
+from each other with a colon (`:`); For example, `16:9`, `4:3`, `2:2` and
+so-on.
 
 #### Inherited from
 
@@ -64,9 +70,11 @@ Aspect ratio.
 
 > **group**: `string`
 
-Defined in: [types/ResolutionDefinition.ts:41](https://github.com/gocom/resolution/blob/3830240e7905e88d58561fac6c8329716b6bbabd/src/types/ResolutionDefinition.ts#L41)
+Defined in: [types/ResolutionDefinition.ts:47](https://github.com/gocom/resolution/blob/a0eb3233e4882006da98f3b482c89335042335df/src/types/ResolutionDefinition.ts#L47)
 
 Simplified grouped resolution name.
+
+For instance, if the [ResolutionDefinition.name](#name) is `8K UHD`, this will be `8K`.
 
 #### Inherited from
 
@@ -78,9 +86,11 @@ Simplified grouped resolution name.
 
 > **height**: `number`
 
-Defined in: [types/ResolutionDefinition.ts:51](https://github.com/gocom/resolution/blob/3830240e7905e88d58561fac6c8329716b6bbabd/src/types/ResolutionDefinition.ts#L51)
+Defined in: [types/ResolutionDefinition.ts:61](https://github.com/gocom/resolution/blob/a0eb3233e4882006da98f3b482c89335042335df/src/types/ResolutionDefinition.ts#L61)
 
-Height.
+Defined pixel height.
+
+Resolutions definition's pixel height threshold.
 
 #### Inherited from
 
@@ -92,9 +102,11 @@ Height.
 
 > **name**: `string`
 
-Defined in: [types/ResolutionDefinition.ts:36](https://github.com/gocom/resolution/blob/3830240e7905e88d58561fac6c8329716b6bbabd/src/types/ResolutionDefinition.ts#L36)
+Defined in: [types/ResolutionDefinition.ts:40](https://github.com/gocom/resolution/blob/a0eb3233e4882006da98f3b482c89335042335df/src/types/ResolutionDefinition.ts#L40)
 
-Name of the resolution.
+Human-readable name identification of the resolution.
+
+For example, `8K UHD`, `8K`, `4K`, `1080p`, `480p` and so-on.
 
 #### Inherited from
 
@@ -106,9 +118,11 @@ Name of the resolution.
 
 > **width**: `number`
 
-Defined in: [types/ResolutionDefinition.ts:46](https://github.com/gocom/resolution/blob/3830240e7905e88d58561fac6c8329716b6bbabd/src/types/ResolutionDefinition.ts#L46)
+Defined in: [types/ResolutionDefinition.ts:54](https://github.com/gocom/resolution/blob/a0eb3233e4882006da98f3b482c89335042335df/src/types/ResolutionDefinition.ts#L54)
 
-Width.
+Defined pixel width.
+
+Resolutions definition's pixel width threshold.
 
 #### Inherited from
 

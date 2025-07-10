@@ -6,22 +6,49 @@
 
 # Function: getAspectRatio()
 
-> **getAspectRatio**(`width`, `height`): `string`
+> **getAspectRatio**(`options`): `undefined` \| `string`
 
-Defined in: [library/AspectRatio.ts:34](https://github.com/gocom/resolution/blob/3830240e7905e88d58561fac6c8329716b6bbabd/src/library/AspectRatio.ts#L34)
+Defined in: [library/AspectRatio.ts:62](https://github.com/gocom/resolution/blob/a0eb3233e4882006da98f3b482c89335042335df/src/library/AspectRatio.ts#L62)
 
-Calculates aspect ratio for the given values.
+Calculates aspect ratio string from the given width and height.
+
+Returns the aspect ratio as a string consisting of two numbers separated
+from each other with a colon (`:`); For example, `16:9`, `4:3`, `2:2` and
+so-on.
 
 ## Parameters
 
-### width
+### options
 
-`number`
+[`GetAspectRatioOptions`](../interfaces/GetAspectRatioOptions.md)
 
-### height
-
-`number`
+Options
 
 ## Returns
 
-`string`
+`undefined` \| `string`
+
+Either aspect ratio string, or `undefined` if calculating aspect ratio failed for
+the given options.
+
+## Example
+
+Give the function [GetAspectRatioOptions.width](../interfaces/GetAspectRatioOptions.md#width) and [GetAspectRatioOptions.height](../interfaces/GetAspectRatioOptions.md#height):
+```ts
+import {getAspectRatio} from '@gocom/resolution';
+
+const aspectRatio = getAspectRatio({
+  width: 3072,
+  height: 1536,
+});
+```
+In the above, the `aspectRatio` variable would contain `2:1`. If the given options are invalid, the function
+returns `undefined`:
+```ts
+import {getAspectRatio} from '@gocom/resolution';
+
+const aspectRatio = getAspectRatio({
+  width: 0,
+  height: 0,
+});
+```
