@@ -8,7 +8,7 @@
 
 > **getResolution**(`width`, `height`, `aspectRatio?`): `undefined` \| [`Resolution`](../interfaces/Resolution.md)
 
-Defined in: [library/Resolution.ts:36](https://github.com/gocom/resolution/blob/655a1b9246de1001843c9ccb7ec21f1134d4f8c7/src/library/Resolution.ts#L36)
+Defined in: [library/Resolution.ts:36](https://github.com/gocom/resolution/blob/3830240e7905e88d58561fac6c8329716b6bbabd/src/library/Resolution.ts#L36)
 
 Gets resolution definition for the given width and height.
 
