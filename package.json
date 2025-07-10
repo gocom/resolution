@@ -1,0 +1,39 @@
+{
+  "name": "@gocom/resolution",
+  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "generate-docs": "typedoc",
+    "lint": "eslint",
+    "test": "jest",
+    "watch": "tsc --watch"
+  },
+  "keywords": [
+    "resolution",
+    "dimension",
+    "aspect",
+    "ratio",
+    "identifier",
+    "parser"
+  ],
+  "author": {
+    "name": "Jukka Svahn",
+    "url": "https://github.com/gocom"
+  },
+  "license": "MIT",
+  "description": "Identify pixel resolutions and dimension strings",
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.2",
+    "eslint": "^9.21.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.6",
+    "typedoc": "^0.28.7",
+    "typedoc-plugin-markdown": "^4.7.0",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.26.0"
+  },
+  "types": "./dist/index.d.ts"
+}

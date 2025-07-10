@@ -1,0 +1,11 @@
+.*
+!.github
+!.gitignore
+!.editorconfig
+!.npmignore
+/*.tgz
+/dist/
+/docs/
+/node_modules/
+/test-reports/
+package-lock.json

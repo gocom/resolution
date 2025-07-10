@@ -1,0 +1,40 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+
+jobs:
+  release:
+    name: Build and publish package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Get version
+        id: version
+        run: |
+          echo "contents<<VERSIONEOF" >> $GITHUB_OUTPUT
+          echo "$GITHUB_REF" | cut -d / -f 3 >> $GITHUB_OUTPUT
+          echo "VERSIONEOF" >> $GITHUB_OUTPUT
+
+      - name: Update version number
+        run: npm version ${{ steps.version.outputs.contents }} --no-commit-hooks --no-git-tag-version
+
+      - name: Build
+        run: make build
+
+      - name: Publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm config set "//registry.npmjs.org/:_authToken" "$NPM_TOKEN"
+          npm publish
