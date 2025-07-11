@@ -1,6 +1,5 @@
 .PHONY: all build clean generate-docs help install lint pack publish rebuild test watch
 
-NPM_CONFIG_REGISTRY ?= http://localhost:4873
 NPM = npm
 
 all: build
@@ -28,9 +27,6 @@ rebuild:
 pack: install
 	$(NPM) pack
 
-publish: install
-	$(NPM) publish --registry "$(NPM_CONFIG_REGISTRY)"
-
 test: node_modules
 	$(NPM) run test
 
@@ -44,9 +40,7 @@ help:
 	@echo "Manage project"
 	@echo ""
 	@echo "Usage:"
-	@echo "  $$ make [command] ["
-	@echo "    [NPM_CONFIG_REGISTRY=<url>]"
-	@echo "  ]"
+	@echo "  $$ make [command]"
 	@echo ""
 	@echo "Commands:"
 	@echo ""
@@ -64,9 +58,6 @@ help:
 	@echo ""
 	@echo "  $$ make pack"
 	@echo "  Package project locally"
-	@echo ""
-	@echo "  $$ make publish"
-	@echo "  Publish project to registry"
 	@echo ""
 	@echo "  $$ make rebuild"
 	@echo "  Clean dist directory before building"

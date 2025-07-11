@@ -7,7 +7,7 @@ License
 [MIT](https://raw.github.com/gocom/resolution/master/LICENSE).
 
 Versioning
-----
+-----
 
 [Semantic Versioning](https://semver.org/).
 
@@ -38,18 +38,48 @@ $ make help
 ```
 
 Publishing
-----
+-----
 
-To publish a first version of the package, first check out the git commit you want to publish, and edit the version
-number in `package.json`, by bumping it up according semantic versioning rules. Then build and publish a new version
-of the package to the registry and tag the published commit in the git repository:
+CI publishes git tags to the npm registry, when the tag is pushed to the git repository.
+
+### Update changelog
+
+Before tagging a commit, make sure that [CHANGELOG.md](https://raw.github.com/gocom/resolution/master/CHANGELOG.md)
+is up-to-date. The top most section and version heading should match the tag.
+
+### Tagging release
+
+To publish a new version, simply create a tag and push it:
 
 ```shell
-$ make rebuild
-$ make publish
 $ git tag -a 0.1.0 -m 0.1.0
 $ git push origin 0.1.0
 ```
 
-Where in the above, `0.1.0` is the same version number that you used in `package.json`. You can omit the `rebuild`
-step if the build is already the one you want. Running it again will affect the file checksum.
+The above would create publish the tag as `0.1.0` to the npm registry, and create release on a GitHub, using
+the top most section from CHANGELOG.md as the release's description. Updating version number in `package.json` file
+is not necessary.
+
+### Testing publishing or manually publishing
+
+If you want to test publishing before tagging, run the same building CI uses:
+
+```shell
+$ make rebuild
+```
+
+You can then either pack the npm package, or even publish it to registry as a pre-release or to a private
+registry:
+
+```shell
+$ make pack
+```
+
+The above would pack tar of the build results, which allows you to verify that everything is alright before publishing.
+In cases CI fails, or for some other reason, you need to publish manually, run the normal npm publishing:
+
+```shell
+$ npm publish --registry http://localhost:4873
+```
+
+The above would publish the package to registry running at `localhost:4873`.

@@ -23,6 +23,12 @@
   },
   "license": "MIT",
   "description": "Identify pixel resolutions and dimension strings",
+  "homepage": "https://github.com/gocom/resolution",
+  "bugs": "https://github.com/gocom/resolution/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gocom/resolution.git"
+  },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@types/jest": "^29.5.14",
