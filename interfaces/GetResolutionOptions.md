@@ -6,7 +6,7 @@
 
 # Interface: GetResolutionOptions
 
-Defined in: [types/Resolution.ts:58](https://github.com/gocom/resolution/blob/a0eb3233e4882006da98f3b482c89335042335df/src/types/Resolution.ts#L58)
+Defined in: [types/Resolution.ts:71](https://github.com/gocom/resolution/blob/b09f35c6aa6800002fde265332915d006dbdfd41/src/types/Resolution.ts#L71)
 
 Get resolution options.
 
@@ -16,13 +16,17 @@ Get resolution options.
 
 > `optional` **aspectRatio**: `string`
 
-Defined in: [types/Resolution.ts:83](https://github.com/gocom/resolution/blob/a0eb3233e4882006da98f3b482c89335042335df/src/types/Resolution.ts#L83)
+Defined in: [types/Resolution.ts:100](https://github.com/gocom/resolution/blob/b09f35c6aa6800002fde265332915d006dbdfd41/src/types/Resolution.ts#L100)
 
 Optional aspect ratio.
 
 A matching named resolution definition is looked up by the aspect ratio string.
-The aspect ratio is string consisting of two integers separated by colon (`:`),
+The aspect ratio is string consisting of two numbers separated by colon (`:`),
 for example `16:9`.
+
+If an aspect ratio is given, a matching resolution definition is first looked from resolutions using
+the same aspect ratio. If no match is found from the same aspect ratio, it looks up resolution definition
+regardless of the aspect ratio.
 
 If no aspect ratio is provided, the looked up aspect ratio is calculated automatically
 from the width and height.
@@ -33,7 +37,7 @@ from the width and height.
 
 > **height**: `number`
 
-Defined in: [types/Resolution.ts:71](https://github.com/gocom/resolution/blob/a0eb3233e4882006da98f3b482c89335042335df/src/types/Resolution.ts#L71)
+Defined in: [types/Resolution.ts:84](https://github.com/gocom/resolution/blob/b09f35c6aa6800002fde265332915d006dbdfd41/src/types/Resolution.ts#L84)
 
 Pixel height.
 
@@ -45,7 +49,7 @@ A matching named resolution definition is looked up by the given height.
 
 > **width**: `number`
 
-Defined in: [types/Resolution.ts:64](https://github.com/gocom/resolution/blob/a0eb3233e4882006da98f3b482c89335042335df/src/types/Resolution.ts#L64)
+Defined in: [types/Resolution.ts:77](https://github.com/gocom/resolution/blob/b09f35c6aa6800002fde265332915d006dbdfd41/src/types/Resolution.ts#L77)
 
 Pixel width.
 

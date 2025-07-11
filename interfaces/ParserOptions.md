@@ -1,0 +1,24 @@
+[**@gocom/resolution**](../README.md)
+
+***
+
+[@gocom/resolution](../README.md) / ParserOptions
+
+# Interface: ParserOptions
+
+Defined in: [types/Parser.ts:45](https://github.com/gocom/resolution/blob/b09f35c6aa6800002fde265332915d006dbdfd41/src/types/Parser.ts#L45)
+
+Parser options.
+
+## Properties
+
+### aspectRatio?
+
+> `optional` **aspectRatio**: `string`
+
+Defined in: [types/Parser.ts:52](https://github.com/gocom/resolution/blob/b09f35c6aa6800002fde265332915d006dbdfd41/src/types/Parser.ts#L52)
+
+Optional aspect ratio.
+
+If given, the aspect ratio is used for looking up the closest named resolution definition in together with
+the given dimensions. Functions identically to the [GetResolutionOptions.aspectRatio](GetResolutionOptions.md#aspectratio).

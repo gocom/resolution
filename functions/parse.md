@@ -6,9 +6,9 @@
 
 # Function: parse()
 
-> **parse**(`dimensions`): `undefined` \| [`Resolution`](../interfaces/Resolution.md)
+> **parse**(`dimensions`, `options?`): `undefined` \| [`Resolution`](../interfaces/Resolution.md)
 
-Defined in: [library/Parser.ts:52](https://github.com/gocom/resolution/blob/a0eb3233e4882006da98f3b482c89335042335df/src/library/Parser.ts#L52)
+Defined in: [library/Parser.ts:54](https://github.com/gocom/resolution/blob/b09f35c6aa6800002fde265332915d006dbdfd41/src/library/Parser.ts#L54)
 
 Parses the given dimensions string.
 
@@ -18,8 +18,14 @@ Parses the given dimensions string.
 
 `string`
 
-Dimensions string, two positive integers separated from each other with `x`. For example
+Dimensions string, two numbers separated from each other with `x`. For example
 `1920x1080`, `6144x3072` and so-on.
+
+### options?
+
+[`ParserOptions`](../interfaces/ParserOptions.md)
+
+Optional additional options.
 
 ## Returns
 
