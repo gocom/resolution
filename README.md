@@ -18,7 +18,7 @@ $ npm install @gocom/resolution
 Documentation
 -----
 
-See [API Docs](https://github.com/gocom/resolution/blob/docs/README.md).
+See [API Docs](https://github.com/gocom/resolution/blob/docs/Public/API.md).
 
 Example Usage
 ----

@@ -24,48 +24,20 @@
  */
 
 /**
- * Public API.
+ * Private API.
  *
- * Identify pixel resolutions and dimension strings, convert raw resolutions to human-readable
- * 1080p, 4K and 8K, and so-on, identifiers.
+ * Internal types and other internal functionality. These are included in API documentation only for reference
+ * purposes.
  *
- * @module API
+ * @module Private
  * @group Resolution
- * @category Public
+ * @category Internal
  */
 
 export {
-  getAspectRatio,
-} from './library/AspectRatio';
-
-export {
-  getDimensionRatio,
-} from './library/DimensionRatio';
-
-export {
-  parse,
-} from './library/Parser';
-
-export {
-  getResolution,
-} from './library/Resolution';
+  resolutions,
+} from './library/ResolutionDefinition';
 
 export type {
-  AspectRatio,
-  GetAspectRatioOptions,
-} from './types/AspectRatio';
-
-export type {
-  DimensionRatio,
-  GetDimensionRatioOptions,
-} from './types/DimensionRatio';
-
-export type {
-  Dimensions,
-  ParserOptions,
-} from './types/Parser';
-
-export type {
-  GetResolutionOptions,
-  Resolution,
-} from './types/Resolution';
+  ResolutionDefinition
+} from './types/ResolutionDefinition';

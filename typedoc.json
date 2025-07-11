@@ -3,8 +3,11 @@
   "categorizeByGroup": true,
   "router": "category",
   "entryPoints": [
-    "./src/index.ts"
+    "./src/index.ts",
+    "./src/internal.ts"
   ],
+  "alwaysCreateEntryPointModule": true,
+  "sortEntryPoints": true,
   "out": "docs",
   "plugin": [
     "typedoc-plugin-markdown"
@@ -13,6 +16,7 @@
   "useFirstParagraphOfCommentAsSummary": true,
   "categoryOrder": [
     "API",
+    "Public",
     "Options",
     "Types",
     "*"

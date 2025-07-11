@@ -32,7 +32,7 @@ import {getDimensionRatio} from './DimensionRatio';
  * Gets resolution definition for the given width and height.
  *
  * Identifies the given resolution based on the given options, returning matching {@link Resolution}
- * definition.
+ * definition. Recognized named resolutions are defined in {@link resolutions}.
  *
  * @param {GetResolutionOptions} options Options
  * @return {Resolution|undefined} Returns either {@link Resolution} object, or undefined if the resolution could not
