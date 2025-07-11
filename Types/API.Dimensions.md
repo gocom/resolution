@@ -2,13 +2,13 @@
 
 ***
 
-[@gocom/resolution](../README.md) / Dimensions
+[@gocom/resolution](../README.md) / [API](../Public/API.md) / Dimensions
 
 # Type Alias: Dimensions
 
 > **Dimensions** = `` `${number}x${number}` `` \| `string`
 
-Defined in: [types/Parser.ts:37](https://github.com/gocom/resolution/blob/dfb8955dcfd50b34a77cb02765f6fdabc142e7b5/src/types/Parser.ts#L37)
+Defined in: [types/Parser.ts:37](https://github.com/gocom/resolution/blob/35516f4c70acda51ccc32c2c2e18319df7b05201/src/types/Parser.ts#L37)
 
 Resolution dimensions.
 

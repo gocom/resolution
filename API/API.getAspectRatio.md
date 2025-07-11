@@ -2,13 +2,13 @@
 
 ***
 
-[@gocom/resolution](../README.md) / getAspectRatio
+[@gocom/resolution](../README.md) / [API](../Public/API.md) / getAspectRatio
 
 # Function: getAspectRatio()
 
 > **getAspectRatio**(`options`): `undefined` \| `string`
 
-Defined in: [library/AspectRatio.ts:62](https://github.com/gocom/resolution/blob/dfb8955dcfd50b34a77cb02765f6fdabc142e7b5/src/library/AspectRatio.ts#L62)
+Defined in: [library/AspectRatio.ts:62](https://github.com/gocom/resolution/blob/35516f4c70acda51ccc32c2c2e18319df7b05201/src/library/AspectRatio.ts#L62)
 
 Calculates aspect ratio string from the given width and height.
 
@@ -20,7 +20,7 @@ so-on.
 
 ### options
 
-[`GetAspectRatioOptions`](../Options/GetAspectRatioOptions.md)
+[`GetAspectRatioOptions`](../Options/API.GetAspectRatioOptions.md)
 
 Options
 
@@ -33,7 +33,7 @@ the given options.
 
 ## Example
 
-Give the function [GetAspectRatioOptions.width](../Options/GetAspectRatioOptions.md#width) and [GetAspectRatioOptions.height](../Options/GetAspectRatioOptions.md#height):
+Give the function [GetAspectRatioOptions.width](../Options/API.GetAspectRatioOptions.md#width) and [GetAspectRatioOptions.height](../Options/API.GetAspectRatioOptions.md#height):
 ```ts
 import {getAspectRatio} from '@gocom/resolution';
 

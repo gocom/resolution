@@ -2,13 +2,13 @@
 
 ***
 
-[@gocom/resolution](../README.md) / getDimensionRatio
+[@gocom/resolution](../README.md) / [API](../Public/API.md) / getDimensionRatio
 
 # Function: getDimensionRatio()
 
 > **getDimensionRatio**(`options`): `undefined` \| `number`
 
-Defined in: [library/DimensionRatio.ts:60](https://github.com/gocom/resolution/blob/dfb8955dcfd50b34a77cb02765f6fdabc142e7b5/src/library/DimensionRatio.ts#L60)
+Defined in: [library/DimensionRatio.ts:60](https://github.com/gocom/resolution/blob/35516f4c70acda51ccc32c2c2e18319df7b05201/src/library/DimensionRatio.ts#L60)
 
 Calculates dimension ratio number from the given width and height.
 
@@ -19,7 +19,7 @@ so-on.
 
 ### options
 
-[`GetDimensionRatioOptions`](../Options/GetDimensionRatioOptions.md)
+[`GetDimensionRatioOptions`](../Options/API.GetDimensionRatioOptions.md)
 
 Options.
 
@@ -27,12 +27,12 @@ Options.
 
 `undefined` \| `number`
 
-Either [DimensionRatio](../Types/DimensionRatio.md), or `undefined` if calculating dimension ratio
+Either [DimensionRatio](../Types/API.DimensionRatio.md), or `undefined` if calculating dimension ratio
 failed for the given options.
 
 ## Example
 
-Give the function [GetDimensionRatioOptions.width](../Options/GetDimensionRatioOptions.md#width) and [GetDimensionRatioOptions.height](../Options/GetDimensionRatioOptions.md#height):
+Give the function [GetDimensionRatioOptions.width](../Options/API.GetDimensionRatioOptions.md#width) and [GetDimensionRatioOptions.height](../Options/API.GetDimensionRatioOptions.md#height):
 ```ts
 import {getDimensionRatio} from '@gocom/resolution';
 
