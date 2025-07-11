@@ -34,6 +34,17 @@ import {getDimensionRatio} from './DimensionRatio';
  * Identifies the given resolution based on the given options, returning matching {@link Resolution}
  * definition. Recognized named resolutions are defined in {@link resolutions}.
  *
+ * If {@link GetResolutionOptions.aspectRatio} is given, the function first goes through the {@link resolutions}
+ * looking for a resolution definition that uses the same aspect ratio, and which total number of pixels is the same, or
+ * greater than the given dimensions total pixel count. If no {@link GetResolutionOptions.aspectRatio} is given, the
+ * looked up aspect ratio is calculated from the given {@link GetResolutionOptions.width} and
+ * {@link GetResolutionOptions.height} using the same logic used by the {@link getAspectRatio} function.
+ *
+ * If no match is found with the same aspect ratio, the function looks for an exact
+ * {@link GetResolutionOptions.width} and {@link GetResolutionOptions.height} combination from the defined resolutions.
+ * If no exact match is found, it looks for the highest resolution, which both the width and
+ * the height is equal or higher than the given width and the height.
+ *
  * @param {GetResolutionOptions} options Options
  * @return {Resolution|undefined} Returns either {@link Resolution} object, or undefined if the resolution could not
  * be recognized.
@@ -52,7 +63,7 @@ import {getDimensionRatio} from './DimensionRatio';
  * console.log(resolution?.name, resolution?.group);
  * ```
  * The {@link Resolution.name} and {@link Resolution.group} can be used to display the resolutions human-readable
- * name.
+ * name, `3K`.
  */
 export const getResolution = (options: GetResolutionOptions): Resolution|undefined => {
   const {
@@ -65,6 +76,7 @@ export const getResolution = (options: GetResolutionOptions): Resolution|undefin
     return undefined;
   }
 
+  const sortedResolutions = getResolutions();
   const triedAspectRatios: string[] = [];
   const calculatedAspectRatio = getAspectRatio({width, height});
   const calculatedDimensionRatio = getDimensionRatio({width, height});
@@ -82,13 +94,13 @@ export const getResolution = (options: GetResolutionOptions): Resolution|undefin
     calculatedDimensionRatio,
   };
 
+  const pixels = width * height;
+
   for (const ratio of tryAspectRatios) {
     if (ratio && !triedAspectRatios.includes(ratio)) {
-      const pixels = width * height;
-
       triedAspectRatios.push(ratio);
 
-      const result = resolutions.find((resolution) => {
+      const result = sortedResolutions.find((resolution) => {
         return ratio === resolution.aspectRatio
           && pixels >= resolution.width * resolution.height;
       });
@@ -102,9 +114,9 @@ export const getResolution = (options: GetResolutionOptions): Resolution|undefin
     }
   }
 
-  const result = resolutions.find((resolution) => {
+  const result = sortedResolutions.find((resolution) => {
       return resolution.width === width && resolution.height === height;
-    }) || resolutions.find((resolution) => {
+    }) || sortedResolutions.find((resolution) => {
       return width >= resolution.width && height >= resolution.height;
     });
 
@@ -116,4 +128,13 @@ export const getResolution = (options: GetResolutionOptions): Resolution|undefin
   }
 
   return undefined;
+};
+
+/**
+ * Gets resolutions sorted based on total number of pixels from the highest to the lowest.
+ */
+const getResolutions = () => {
+  return resolutions
+    .sort((a, b) => a.width * a.height - b.width * b.height)
+    .reverse();
 };
