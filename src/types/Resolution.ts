@@ -66,7 +66,7 @@ export interface Resolution extends ResolutionDefinition {
  * Get resolution options.
  *
  * @group Resolution
- * @category Types
+ * @category Options
  */
 export interface GetResolutionOptions {
   /**

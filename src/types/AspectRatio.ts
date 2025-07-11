@@ -39,7 +39,7 @@ export type AspectRatio = `${number}:${number}` | string;
  * Get aspect ratio options.
  *
  * @group Resolution
- * @category Types
+ * @category Options
  */
 export interface GetAspectRatioOptions {
   /**

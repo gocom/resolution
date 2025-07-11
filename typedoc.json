@@ -1,6 +1,7 @@
 {
   "$schema": "https://typedoc.org/schema.json",
   "categorizeByGroup": true,
+  "router": "category",
   "entryPoints": [
     "./src/index.ts"
   ],
@@ -9,5 +10,15 @@
     "typedoc-plugin-markdown"
   ],
   "readme": "none",
-  "useFirstParagraphOfCommentAsSummary": true
+  "useFirstParagraphOfCommentAsSummary": true,
+  "categoryOrder": [
+    "API",
+    "Options",
+    "Types",
+    "*"
+  ],
+  "groupOrder": [
+    "Resolution",
+    "*"
+  ]
 }

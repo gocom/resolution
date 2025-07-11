@@ -40,7 +40,7 @@ export type Dimensions = `${number}x${number}` | string;
  * Parser options.
  *
  * @group Resolution
- * @category Types
+ * @category Options
  */
 export interface ParserOptions {
   /**

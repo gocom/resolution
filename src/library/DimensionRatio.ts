@@ -26,15 +26,14 @@
 import type {DimensionRatio, GetDimensionRatioOptions} from '../types/DimensionRatio';
 
 /**
- * Calculates aspect ratio string from the given width and height.
+ * Calculates dimension ratio number from the given width and height.
  *
- * Returns the aspect ratio as a string consisting of two numbers separated
- * from each other with a colon (`:`); For example, `16:9`, `4:3`, `2:2` and
+ * Returns the aspect ratio as a number with rounded decimals, for example, `1.78`, `1.33`, `1.00` and
  * so-on.
  *
- * @param {GetDimensionRatioOptions} options Options
- * @return {DimensionRatio|undefined} Either dimension ratio string, or `undefined` if calculating aspect ratio failed
- * for the given options.
+ * @param {GetDimensionRatioOptions} options Options.
+ * @return {DimensionRatio|undefined} Either {@link DimensionRatio}, or `undefined` if calculating dimension ratio
+ * failed for the given options.
  * @group Resolution
  * @category API
  * @example
@@ -42,7 +41,7 @@ import type {DimensionRatio, GetDimensionRatioOptions} from '../types/DimensionR
  * ```ts
  * import {getDimensionRatio} from '@gocom/resolution';
  *
- * const ratio = getAspectRatio({
+ * const ratio = getDimensionRatio({
  *   width: 3072,
  *   height: 1536,
  * });

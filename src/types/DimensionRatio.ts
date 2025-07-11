@@ -38,7 +38,7 @@ export type DimensionRatio = number;
  * Get dimension ratio options.
  *
  * @group Resolution
- * @category Types
+ * @category Options
  */
 export interface GetDimensionRatioOptions {
   /**
