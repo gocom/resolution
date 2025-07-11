@@ -37,7 +37,7 @@ import {getDimensionRatio} from './DimensionRatio';
  * @param {GetResolutionOptions} options Options
  * @return {Resolution|undefined} Returns either {@link Resolution} object, or undefined if the resolution could not
  * be recognized.
- * @group Resolution
+ * @group Library
  * @category API
  * @example
  * The following would detect `3072x1536` resolution, and returns results as {@link Resolution} object:

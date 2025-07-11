@@ -35,7 +35,7 @@ import type {Dimensions, ParserOptions} from '../types/Parser';
  * @param {ParserOptions} [options] Optional additional options.
  * @return {Resolution|undefined} Returns the results as {@link Resolution} object, or undefined if the given dimensions
  * string could not be parsed.
- * @group Resolution
+ * @group Library
  * @category API
  * @example
  * The following parses the given `1920x1080` resolution string, and returns results as {@link Resolution} object:

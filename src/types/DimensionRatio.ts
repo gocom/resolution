@@ -29,7 +29,7 @@
  * Ratio between resolution width and height as a number, for example
  * `1.85`, `1.33`, `1.78`, `1.00` and so-on.
  *
- * @group Resolution
+ * @group Library
  * @category Types
  */
 export type DimensionRatio = number;
@@ -37,7 +37,9 @@ export type DimensionRatio = number;
 /**
  * Get dimension ratio options.
  *
- * @group Resolution
+ * Available options for {@link getDimensionRatio}.
+ *
+ * @group Library
  * @category Options
  */
 export interface GetDimensionRatioOptions {

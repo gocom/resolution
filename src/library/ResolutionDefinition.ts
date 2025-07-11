@@ -36,7 +36,7 @@ import type {ResolutionDefinition} from '../types/ResolutionDefinition';
  * @see [Firehouse: Aspect ratio cheat sheet](https://www.wearethefirehouse.com/aspect-ratio-cheat-sheet)
  * @see [Joel Mulder: Aspect ratio cheat sheet](https://www.mdmcinematics.com/aspectratio)
  * @see [Unravel: Aspect Ratio Tool and cheat sheet](https://www.unravel.com.au/aspect-ratio-cheat-sheet)
- * @group Resolution
+ * @group Library
  * @category Internal
  */
 export const resolutions: ResolutionDefinition[] = [

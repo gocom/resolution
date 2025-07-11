@@ -30,7 +30,7 @@ import type {DimensionRatio} from './DimensionRatio';
 /**
  * Resolution result.
  *
- * @group Resolution
+ * @group Library
  * @category Types
  */
 export interface Resolution extends ResolutionDefinition {
@@ -65,7 +65,9 @@ export interface Resolution extends ResolutionDefinition {
 /**
  * Get resolution options.
  *
- * @group Resolution
+ * Available options for {@link getResolution}.
+ *
+ * @group Library
  * @category Options
  */
 export interface GetResolutionOptions {

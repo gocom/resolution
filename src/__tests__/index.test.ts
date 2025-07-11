@@ -23,21 +23,11 @@
  * SOFTWARE.
  */
 
-/**
- * Private API.
- *
- * Internal types and other internal functionality. These are included in API documentation only for reference
- * purposes.
- *
- * @module Private
- * @group Library
- * @category Internal
- */
+import {getAspectRatio, getDimensionRatio, parse, getResolution} from '../index';
 
-export {
-  resolutions,
-} from './library/ResolutionDefinition';
-
-export type {
-  ResolutionDefinition
-} from './types/ResolutionDefinition';
+test('Exports', () => {
+  expect(getAspectRatio).toBeDefined();
+  expect(getDimensionRatio).toBeDefined();
+  expect(parse).toBeDefined();
+  expect(getResolution).toBeDefined();
+});

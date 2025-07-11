@@ -29,7 +29,7 @@ import type {DimensionRatio} from './DimensionRatio';
 /**
  * Resolution definition.
  *
- * @group Resolution
+ * @group Library
  * @category Types
  */
 export interface ResolutionDefinition {

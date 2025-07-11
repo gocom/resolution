@@ -31,7 +31,7 @@ import type {AspectRatio} from './AspectRatio';
  * Resolution dimensions as a string presentation, consisting of two numbers separated from each other with a `x`. For
  * example `1920x1080`, `6144x3072`, `1x1` and so-on.
  *
- * @group Resolution
+ * @group Library
  * @category Types
  */
 export type Dimensions = `${number}x${number}` | string;
@@ -39,7 +39,9 @@ export type Dimensions = `${number}x${number}` | string;
 /**
  * Parser options.
  *
- * @group Resolution
+ * Available options for {@link parse}.
+ *
+ * @group Library
  * @category Options
  */
 export interface ParserOptions {

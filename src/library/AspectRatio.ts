@@ -36,7 +36,7 @@ import type {AspectRatio, GetAspectRatioOptions} from '../types/AspectRatio';
  * @param {GetAspectRatioOptions} options Options
  * @return {AspectRatio|undefined} Either aspect ratio string, or `undefined` if calculating aspect ratio failed for
  * the given options.
- * @group Resolution
+ * @group Library
  * @category API
  * @example
  * Give the function {@link GetAspectRatioOptions.width} and {@link GetAspectRatioOptions.height}:

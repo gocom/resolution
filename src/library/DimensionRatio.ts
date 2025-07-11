@@ -34,7 +34,7 @@ import type {DimensionRatio, GetDimensionRatioOptions} from '../types/DimensionR
  * @param {GetDimensionRatioOptions} options Options.
  * @return {DimensionRatio|undefined} Either {@link DimensionRatio}, or `undefined` if calculating dimension ratio
  * failed for the given options.
- * @group Resolution
+ * @group Library
  * @category API
  * @example
  * Give the function {@link GetDimensionRatioOptions.width} and {@link GetDimensionRatioOptions.height}:

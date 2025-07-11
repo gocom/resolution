@@ -30,7 +30,7 @@
  * 1080p, 4K and 8K, and so-on, identifiers.
  *
  * @module API
- * @group Resolution
+ * @group Library
  * @category Public
  */
 

@@ -23,21 +23,8 @@
  * SOFTWARE.
  */
 
-/**
- * Private API.
- *
- * Internal types and other internal functionality. These are included in API documentation only for reference
- * purposes.
- *
- * @module Private
- * @group Library
- * @category Internal
- */
+import {resolutions} from '../internal';
 
-export {
-  resolutions,
-} from './library/ResolutionDefinition';
-
-export type {
-  ResolutionDefinition
-} from './types/ResolutionDefinition';
+test('Exports', () => {
+  expect(resolutions).toBeDefined();
+});

@@ -30,7 +30,7 @@
  * from each other with a colon (`:`); For example, `16:9`, `4:3`, `2:2`, `1.90:1` and
  * so-on.
  *
- * @group Resolution
+ * @group Library
  * @category Types
  */
 export type AspectRatio = `${number}:${number}` | string;
@@ -38,7 +38,9 @@ export type AspectRatio = `${number}:${number}` | string;
 /**
  * Get aspect ratio options.
  *
- * @group Resolution
+ * Available options for {@link getAspectRatio}.
+ *
+ * @group Library
  * @category Options
  */
 export interface GetAspectRatioOptions {
