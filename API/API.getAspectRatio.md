@@ -8,7 +8,7 @@
 
 > **getAspectRatio**(`options`): `undefined` \| `string`
 
-Defined in: [library/AspectRatio.ts:62](https://github.com/gocom/resolution/blob/dc8a324ffbf191417b76e5dc1bd072842561b49b/src/library/AspectRatio.ts#L62)
+Defined in: [library/AspectRatio.ts:62](https://github.com/gocom/resolution/blob/fef2466329414f36c6a1aed0d912fa80ba5a3eb7/src/library/AspectRatio.ts#L62)
 
 Calculates aspect ratio string from the given width and height.
 

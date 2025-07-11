@@ -8,7 +8,7 @@
 
 > **parse**(`dimensions`, `options?`): `undefined` \| [`Resolution`](../Types/API.Resolution.md)
 
-Defined in: [library/Parser.ts:54](https://github.com/gocom/resolution/blob/dc8a324ffbf191417b76e5dc1bd072842561b49b/src/library/Parser.ts#L54)
+Defined in: [library/Parser.ts:54](https://github.com/gocom/resolution/blob/fef2466329414f36c6a1aed0d912fa80ba5a3eb7/src/library/Parser.ts#L54)
 
 Parses the given dimensions string.
 

@@ -6,7 +6,7 @@
 
 # Interface: ParserOptions
 
-Defined in: [types/Parser.ts:47](https://github.com/gocom/resolution/blob/dc8a324ffbf191417b76e5dc1bd072842561b49b/src/types/Parser.ts#L47)
+Defined in: [types/Parser.ts:47](https://github.com/gocom/resolution/blob/fef2466329414f36c6a1aed0d912fa80ba5a3eb7/src/types/Parser.ts#L47)
 
 Parser options.
 
@@ -18,7 +18,7 @@ Available options for [parse](../API/API.parse.md).
 
 > `optional` **aspectRatio**: `string`
 
-Defined in: [types/Parser.ts:54](https://github.com/gocom/resolution/blob/dc8a324ffbf191417b76e5dc1bd072842561b49b/src/types/Parser.ts#L54)
+Defined in: [types/Parser.ts:54](https://github.com/gocom/resolution/blob/fef2466329414f36c6a1aed0d912fa80ba5a3eb7/src/types/Parser.ts#L54)
 
 Optional aspect ratio.
 
