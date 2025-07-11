@@ -13,18 +13,21 @@ Identify pixel resolutions and dimension strings, convert raw resolutions to hum
 
 ### API
 
-- [getAspectRatio](functions/getAspectRatio.md)
-- [getDimensionRatio](functions/getDimensionRatio.md)
-- [getResolution](functions/getResolution.md)
-- [parse](functions/parse.md)
+- [getAspectRatio](API/getAspectRatio.md)
+- [getDimensionRatio](API/getDimensionRatio.md)
+- [getResolution](API/getResolution.md)
+- [parse](API/parse.md)
+
+### Options
+
+- [GetAspectRatioOptions](Options/GetAspectRatioOptions.md)
+- [GetDimensionRatioOptions](Options/GetDimensionRatioOptions.md)
+- [GetResolutionOptions](Options/GetResolutionOptions.md)
+- [ParserOptions](Options/ParserOptions.md)
 
 ### Types
 
-- [GetAspectRatioOptions](interfaces/GetAspectRatioOptions.md)
-- [GetDimensionRatioOptions](interfaces/GetDimensionRatioOptions.md)
-- [GetResolutionOptions](interfaces/GetResolutionOptions.md)
-- [ParserOptions](interfaces/ParserOptions.md)
-- [Resolution](interfaces/Resolution.md)
-- [AspectRatio](type-aliases/AspectRatio.md)
-- [DimensionRatio](type-aliases/DimensionRatio.md)
-- [Dimensions](type-aliases/Dimensions.md)
+- [Resolution](Types/Resolution.md)
+- [AspectRatio](Types/AspectRatio.md)
+- [DimensionRatio](Types/DimensionRatio.md)
+- [Dimensions](Types/Dimensions.md)

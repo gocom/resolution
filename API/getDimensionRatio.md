@@ -1,0 +1,53 @@
+[**@gocom/resolution**](../README.md)
+
+***
+
+[@gocom/resolution](../README.md) / getDimensionRatio
+
+# Function: getDimensionRatio()
+
+> **getDimensionRatio**(`options`): `undefined` \| `number`
+
+Defined in: [library/DimensionRatio.ts:60](https://github.com/gocom/resolution/blob/dfb8955dcfd50b34a77cb02765f6fdabc142e7b5/src/library/DimensionRatio.ts#L60)
+
+Calculates dimension ratio number from the given width and height.
+
+Returns the aspect ratio as a number with rounded decimals, for example, `1.78`, `1.33`, `1.00` and
+so-on.
+
+## Parameters
+
+### options
+
+[`GetDimensionRatioOptions`](../Options/GetDimensionRatioOptions.md)
+
+Options.
+
+## Returns
+
+`undefined` \| `number`
+
+Either [DimensionRatio](../Types/DimensionRatio.md), or `undefined` if calculating dimension ratio
+failed for the given options.
+
+## Example
+
+Give the function [GetDimensionRatioOptions.width](../Options/GetDimensionRatioOptions.md#width) and [GetDimensionRatioOptions.height](../Options/GetDimensionRatioOptions.md#height):
+```ts
+import {getDimensionRatio} from '@gocom/resolution';
+
+const ratio = getDimensionRatio({
+  width: 3072,
+  height: 1536,
+});
+```
+In the above, the `ratio` variable would contain `2.00`. If the given options are invalid, the function
+returns `undefined`:
+```ts
+import {getDimensionRatio} from '@gocom/resolution';
+
+const ratio = getDimensionRatio({
+  width: 0,
+  height: 0,
+});
+```

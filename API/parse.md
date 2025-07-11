@@ -6,9 +6,9 @@
 
 # Function: parse()
 
-> **parse**(`dimensions`, `options?`): `undefined` \| [`Resolution`](../interfaces/Resolution.md)
+> **parse**(`dimensions`, `options?`): `undefined` \| [`Resolution`](../Types/Resolution.md)
 
-Defined in: [library/Parser.ts:54](https://github.com/gocom/resolution/blob/b09f35c6aa6800002fde265332915d006dbdfd41/src/library/Parser.ts#L54)
+Defined in: [library/Parser.ts:54](https://github.com/gocom/resolution/blob/dfb8955dcfd50b34a77cb02765f6fdabc142e7b5/src/library/Parser.ts#L54)
 
 Parses the given dimensions string.
 
@@ -23,20 +23,20 @@ Dimensions string, two numbers separated from each other with `x`. For example
 
 ### options?
 
-[`ParserOptions`](../interfaces/ParserOptions.md)
+[`ParserOptions`](../Options/ParserOptions.md)
 
 Optional additional options.
 
 ## Returns
 
-`undefined` \| [`Resolution`](../interfaces/Resolution.md)
+`undefined` \| [`Resolution`](../Types/Resolution.md)
 
-Returns the results as [Resolution](../interfaces/Resolution.md) object, or undefined if the given dimensions
+Returns the results as [Resolution](../Types/Resolution.md) object, or undefined if the given dimensions
 string could not be parsed.
 
 ## Example
 
-The following parses the given `1920x1080` resolution string, and returns results as [Resolution](../interfaces/Resolution.md) object:
+The following parses the given `1920x1080` resolution string, and returns results as [Resolution](../Types/Resolution.md) object:
 ```ts
 import {parse} from '@gocom/resolution';
 
