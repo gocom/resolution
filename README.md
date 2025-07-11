@@ -38,6 +38,7 @@ console.log(
   resolution?.width, // 7680
   resolution?.height, // 4320
   resolution?.aspectRatio, // 16:9
+  resolution?.dimensionRatio, // 1.78
 );
 ```
 

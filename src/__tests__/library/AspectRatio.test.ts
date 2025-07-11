@@ -25,7 +25,7 @@
 
 import {getAspectRatio} from '../../index';
 
-test('Parse 1920x1080', () => {
+test('Calculate 1920x1080', () => {
   const actual = getAspectRatio({
     width: 1920,
     height: 1080,
@@ -34,7 +34,7 @@ test('Parse 1920x1080', () => {
   expect(actual).toEqual('16:9');
 });
 
-test('Parse 3072x1536', () => {
+test('Calculate 3072x1536', () => {
   const actual = getAspectRatio({
     width: 3072,
     height: 1536,
@@ -43,7 +43,7 @@ test('Parse 3072x1536', () => {
   expect(actual).toEqual('2:1');
 });
 
-test('Parse 1920x1920', () => {
+test('Calculate 1920x1920', () => {
   const actual = getAspectRatio({
     width: 1920,
     height: 1920,
@@ -52,7 +52,7 @@ test('Parse 1920x1920', () => {
   expect(actual).toEqual('1:1');
 });
 
-test('Parse 0x0', () => {
+test('Calculate 0x0', () => {
   const actual = getAspectRatio({
     width: 0,
     height: 0,

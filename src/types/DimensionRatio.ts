@@ -23,28 +23,35 @@
  * SOFTWARE.
  */
 
-import {calculateGreatestCommonDivisor} from '../../library/Divisor';
+/**
+ * Dimension ratio.
+ *
+ * Ratio between resolution width and height as a number, for example
+ * `1.85`, `1.33`, `1.78`, `1.00` and so-on.
+ *
+ * @group Resolution
+ * @category Types
+ */
+export type DimensionRatio = number;
 
-test('Calculate 1920x1080', () => {
-  const actual = calculateGreatestCommonDivisor(1920, 1080);
+/**
+ * Get dimension ratio options.
+ *
+ * @group Resolution
+ * @category Types
+ */
+export interface GetDimensionRatioOptions {
+  /**
+   * Pixel width.
+   *
+   * A width from which the dimension ratio is calculated from.
+   */
+  width: number
 
-  expect(actual).toEqual(120);
-});
-
-test('Calculate 1x1', () => {
-  const actual = calculateGreatestCommonDivisor(1, 1);
-
-  expect(actual).toEqual(1);
-});
-
-test('Calculate 0x0', () => {
-  const actual = calculateGreatestCommonDivisor(0, 0);
-
-  expect(actual).toEqual(0);
-});
-
-test('Calculate NaNxNaN', () => {
-  const actual = calculateGreatestCommonDivisor(NaN, NaN);
-
-  expect(actual).toEqual(0);
-});
+  /**
+   * Pixel height.
+   *
+   * A height from which the dimension ratio is calculated from.
+   */
+  height: number
+}

@@ -25,12 +25,14 @@
 
 import type {Resolution} from '../types/Resolution';
 import {getResolution} from './Resolution';
+import type {Dimensions, ParserOptions} from '../types/Parser';
 
 /**
  * Parses the given dimensions string.
  *
- * @param {string} dimensions Dimensions string, two positive integers separated from each other with `x`. For example
+ * @param {Dimensions} dimensions Dimensions string, two numbers separated from each other with `x`. For example
  * `1920x1080`, `6144x3072` and so-on.
+ * @param {ParserOptions} [options] Optional additional options.
  * @return {Resolution|undefined} Returns the results as {@link Resolution} object, or undefined if the given dimensions
  * string could not be parsed.
  * @group Resolution
@@ -50,7 +52,8 @@ import {getResolution} from './Resolution';
  * ```
  */
 export const parse = (
-  dimensions: string
+  dimensions: Dimensions,
+  options?: ParserOptions
 ): Resolution|undefined => {
   if (dimensions) {
     const [width, height] = dimensions.split(/[^0-9.,]+/);
@@ -59,6 +62,7 @@ export const parse = (
       return getResolution({
         width: asNumber(width),
         height: asNumber(height),
+        aspectRatio: options?.aspectRatio,
       });
     }
   }

@@ -25,6 +25,7 @@
 
 import type {ResolutionDefinition} from './ResolutionDefinition';
 import type {AspectRatio} from './AspectRatio';
+import type {DimensionRatio} from './DimensionRatio';
 
 /**
  * Resolution result.
@@ -45,8 +46,20 @@ export interface Resolution extends ResolutionDefinition {
 
   /**
    * Actual given aspect ratio.
+   *
+   * Will be `undefined`, if no user-specified aspect ratio was given.
    */
   actualAspectRatio?: AspectRatio
+
+  /**
+   * Calculated aspect ratio.
+   */
+  calculatedAspectRatio?: AspectRatio
+
+  /**
+   * Calculated dimension ratio.
+   */
+  calculatedDimensionRatio?: DimensionRatio
 }
 
 /**
@@ -74,8 +87,12 @@ export interface GetResolutionOptions {
    * Optional aspect ratio.
    *
    * A matching named resolution definition is looked up by the aspect ratio string.
-   * The aspect ratio is string consisting of two integers separated by colon (`:`),
+   * The aspect ratio is string consisting of two numbers separated by colon (`:`),
    * for example `16:9`.
+   *
+   * If an aspect ratio is given, a matching resolution definition is first looked from resolutions using
+   * the same aspect ratio. If no match is found from the same aspect ratio, it looks up resolution definition
+   * regardless of the aspect ratio.
    *
    * If no aspect ratio is provided, the looked up aspect ratio is calculated automatically
    * from the width and height.

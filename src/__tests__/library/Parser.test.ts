@@ -35,9 +35,54 @@ test('Parse 1920x1080', () => {
     width: 1920,
     height: 1080,
     aspectRatio: '16:9',
+    dimensionRatio: 1.78,
     actualWidth: 1920,
     actualHeight: 1080,
     actualAspectRatio: undefined,
+    calculatedAspectRatio: '16:9',
+    calculatedDimensionRatio: 1.78,
+  };
+
+  expect(actual).toEqual(expected);
+});
+
+test('Parse 1,920x1,080', () => {
+  const actual = parse('1,920x1,080');
+
+  const expected: Resolution = {
+    name: '1080p',
+    group: '1080p',
+    width: 1920,
+    height: 1080,
+    aspectRatio: '16:9',
+    dimensionRatio: 1.78,
+    actualWidth: 1920,
+    actualHeight: 1080,
+    actualAspectRatio: undefined,
+    calculatedAspectRatio: '16:9',
+    calculatedDimensionRatio: 1.78,
+  };
+
+  expect(actual).toEqual(expected);
+});
+
+test('Parse 1920x1080 with 16:9', () => {
+  const actual = parse('1920x1080', {
+    aspectRatio: '16:9',
+  });
+
+  const expected: Resolution = {
+    name: '1080p',
+    group: '1080p',
+    width: 1920,
+    height: 1080,
+    aspectRatio: '16:9',
+    dimensionRatio: 1.78,
+    actualWidth: 1920,
+    actualHeight: 1080,
+    actualAspectRatio: '16:9',
+    calculatedAspectRatio: '16:9',
+    calculatedDimensionRatio: 1.78,
   };
 
   expect(actual).toEqual(expected);
@@ -49,31 +94,14 @@ test('Parse 0x0', () => {
   expect(actual).toBeUndefined();
 });
 
-test('Parse given an empty string', () => {
+test('Parse empty string', () => {
   const actual = parse('');
 
   expect(actual).toBeUndefined();
 });
 
-test('Invalid numbers', () => {
+test('Parse 1920xinvalid', () => {
   const actual = parse('1920xinvalid');
 
   expect(actual).toBeUndefined();
-});
-
-test('Values contain number separators', () => {
-  const actual = parse('1,920x1,080');
-
-  const expected: Resolution = {
-    name: '1080p',
-    group: '1080p',
-    width: 1920,
-    height: 1080,
-    aspectRatio: '16:9',
-    actualWidth: 1920,
-    actualHeight: 1080,
-    actualAspectRatio: undefined,
-  };
-
-  expect(actual).toEqual(expected);
 });

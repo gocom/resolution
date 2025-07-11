@@ -23,28 +23,67 @@
  * SOFTWARE.
  */
 
-import {calculateGreatestCommonDivisor} from '../../library/Divisor';
+import {getDimensionRatio} from '../../index';
 
 test('Calculate 1920x1080', () => {
-  const actual = calculateGreatestCommonDivisor(1920, 1080);
+  const actual = getDimensionRatio({
+    width: 1920,
+    height: 1080,
+  });
 
-  expect(actual).toEqual(120);
+  expect(actual).toEqual(1.78);
+});
+
+test('Calculate 3072x1536', () => {
+  const actual = getDimensionRatio({
+    width: 3072,
+    height: 1536,
+  });
+
+  expect(actual).toEqual(2.00);
+});
+
+test('Calculate 1920x1920', () => {
+  const actual = getDimensionRatio({
+    width: 1920,
+    height: 1920,
+  });
+
+  expect(actual).toEqual(1.00);
+});
+
+test('Calculate 1080x1920', () => {
+  const actual = getDimensionRatio({
+    width: 1080,
+    height: 1920,
+  });
+
+  expect(actual).toEqual(1.78);
 });
 
 test('Calculate 1x1', () => {
-  const actual = calculateGreatestCommonDivisor(1, 1);
+  const actual = getDimensionRatio({
+    width: 1,
+    height: 1,
+  });
 
-  expect(actual).toEqual(1);
+  expect(actual).toEqual(1.00);
+});
+
+test('Calculate -5x-5', () => {
+  const actual = getDimensionRatio({
+    width: -5,
+    height: -5,
+  });
+
+  expect(actual).toBeUndefined();
 });
 
 test('Calculate 0x0', () => {
-  const actual = calculateGreatestCommonDivisor(0, 0);
+  const actual = getDimensionRatio({
+    width: 0,
+    height: 0,
+  });
 
-  expect(actual).toEqual(0);
-});
-
-test('Calculate NaNxNaN', () => {
-  const actual = calculateGreatestCommonDivisor(NaN, NaN);
-
-  expect(actual).toEqual(0);
+  expect(actual).toBeUndefined();
 });

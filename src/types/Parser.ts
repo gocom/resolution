@@ -23,28 +23,31 @@
  * SOFTWARE.
  */
 
-import {calculateGreatestCommonDivisor} from '../../library/Divisor';
+import type {AspectRatio} from './AspectRatio';
 
-test('Calculate 1920x1080', () => {
-  const actual = calculateGreatestCommonDivisor(1920, 1080);
+/**
+ * Resolution dimensions.
+ *
+ * Resolution dimensions as a string presentation, consisting of two numbers separated from each other with a `x`. For
+ * example `1920x1080`, `6144x3072`, `1x1` and so-on.
+ *
+ * @group Resolution
+ * @category Types
+ */
+export type Dimensions = `${number}x${number}` | string;
 
-  expect(actual).toEqual(120);
-});
-
-test('Calculate 1x1', () => {
-  const actual = calculateGreatestCommonDivisor(1, 1);
-
-  expect(actual).toEqual(1);
-});
-
-test('Calculate 0x0', () => {
-  const actual = calculateGreatestCommonDivisor(0, 0);
-
-  expect(actual).toEqual(0);
-});
-
-test('Calculate NaNxNaN', () => {
-  const actual = calculateGreatestCommonDivisor(NaN, NaN);
-
-  expect(actual).toEqual(0);
-});
+/**
+ * Parser options.
+ *
+ * @group Resolution
+ * @category Types
+ */
+export interface ParserOptions {
+  /**
+   * Optional aspect ratio.
+   *
+   * If given, the aspect ratio is used for looking up the closest named resolution definition in together with
+   * the given dimensions. Functions identically to the {@link GetResolutionOptions.aspectRatio}.
+   */
+  aspectRatio?: AspectRatio
+}

@@ -24,6 +24,7 @@
  */
 
 import type {AspectRatio} from './AspectRatio';
+import type {DimensionRatio} from './DimensionRatio';
 
 /**
  * Resolution definition.
@@ -61,7 +62,7 @@ export interface ResolutionDefinition {
   height: number
 
   /**
-   * Defined aspect ratio.
+   * Defined aspect ratio in string presentation.
    *
    * Resolutions definition's aspect ratio.
    *
@@ -70,4 +71,13 @@ export interface ResolutionDefinition {
    * so-on.
    */
   aspectRatio?: AspectRatio
+
+  /**
+   * Defined ratio between dimensions.
+   *
+   * Resolutions definition's aspect ratio as a number.
+   *
+   * Returns the aspect ratio as a number ratio, for example `1.85`, `1.33`, `1.78` and so-on.
+   */
+  dimensionRatio?: DimensionRatio
 }

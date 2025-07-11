@@ -26,7 +26,7 @@
 import {getResolution} from '../../index';
 import type {Resolution} from '../../index';
 
-test('Parse 1920x1080', () => {
+test('Calculate 1920x1080', () => {
   const actual = getResolution({
     width: 1920,
     height: 1080,
@@ -38,15 +38,18 @@ test('Parse 1920x1080', () => {
     width: 1920,
     height: 1080,
     aspectRatio: '16:9',
+    dimensionRatio: 1.78,
     actualWidth: 1920,
     actualHeight: 1080,
     actualAspectRatio: undefined,
+    calculatedAspectRatio: '16:9',
+    calculatedDimensionRatio: 1.78,
   };
 
   expect(actual).toEqual(expected);
 });
 
-test('Parse 1x1', () => {
+test('Calculate 1x1', () => {
   const actual = getResolution({
     width: 1,
     height: 1,
@@ -55,7 +58,7 @@ test('Parse 1x1', () => {
   expect(actual).toBeUndefined();
 });
 
-test('Parse 1920x920', () => {
+test('Calculate 1920x920', () => {
   const actual = getResolution({
     width: 1920,
     height: 920,
@@ -67,15 +70,18 @@ test('Parse 1920x920', () => {
     width: 1920,
     height: 816,
     aspectRatio: '2.35:1',
+    dimensionRatio: 2.35,
     actualWidth: 1920,
     actualHeight: 920,
     actualAspectRatio: undefined,
+    calculatedAspectRatio: '48:23',
+    calculatedDimensionRatio: 2.09,
   };
 
   expect(actual).toEqual(expected);
 });
 
-test('Given zero height', () => {
+test('Calculate 1920x0', () => {
   const actual = getResolution({
     width: 1920,
     height: 0,
@@ -84,7 +90,7 @@ test('Given zero height', () => {
   expect(actual).toBeUndefined();
 });
 
-test('Given negative height', () => {
+test('Calculate 1920x-5', () => {
   const actual = getResolution({
     width: 1920,
     height: -5,
@@ -93,7 +99,7 @@ test('Given negative height', () => {
   expect(actual).toBeUndefined();
 });
 
-test('Given zero width', () => {
+test('Calculate 0x1080', () => {
   const actual = getResolution({
     width: 0,
     height: 1080,
@@ -102,7 +108,7 @@ test('Given zero width', () => {
   expect(actual).toBeUndefined();
 });
 
-test('Given negative width', () => {
+test('Calculate -5x1080', () => {
   const actual = getResolution({
     width: -5,
     height: 1080,
@@ -111,7 +117,7 @@ test('Given negative width', () => {
   expect(actual).toBeUndefined();
 });
 
-test('Given zero width and height', () => {
+test('Calculate 0x0', () => {
   const actual = getResolution({
     width: 0,
     height: 0,
@@ -120,7 +126,7 @@ test('Given zero width and height', () => {
   expect(actual).toBeUndefined();
 });
 
-test('Given negative width and height', () => {
+test('Calculate -5x-5', () => {
   const actual = getResolution({
     width: -5,
     height: -5,

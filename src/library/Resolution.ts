@@ -26,6 +26,7 @@
 import type {GetResolutionOptions, Resolution} from '../types/Resolution';
 import {resolutions} from './ResolutionDefinition';
 import {getAspectRatio} from './AspectRatio';
+import {getDimensionRatio} from './DimensionRatio';
 
 /**
  * Gets resolution definition for the given width and height.
@@ -52,7 +53,6 @@ import {getAspectRatio} from './AspectRatio';
  * ```
  * The {@link Resolution.name} and {@link Resolution.group} can be used to display the resolutions human-readable
  * name.
- *
  */
 export const getResolution = (options: GetResolutionOptions): Resolution|undefined => {
   const {
@@ -66,21 +66,23 @@ export const getResolution = (options: GetResolutionOptions): Resolution|undefin
   }
 
   const triedAspectRatios: string[] = [];
+  const calculatedAspectRatio = getAspectRatio({width, height});
+  const calculatedDimensionRatio = getDimensionRatio({width, height});
 
   const tryAspectRatios = [
-    () => aspectRatio,
-    () => getAspectRatio({width, height}),
+    aspectRatio,
+    calculatedAspectRatio,
   ];
 
   const additionResult= {
     actualWidth: width,
     actualHeight: height,
     actualAspectRatio: aspectRatio,
+    calculatedAspectRatio,
+    calculatedDimensionRatio,
   };
 
-  for (const tryAspectRatio of tryAspectRatios) {
-    const ratio = tryAspectRatio();
-
+  for (const ratio of tryAspectRatios) {
     if (ratio && !triedAspectRatios.includes(ratio)) {
       const pixels = width * height;
 
@@ -100,13 +102,11 @@ export const getResolution = (options: GetResolutionOptions): Resolution|undefin
     }
   }
 
-  const result = (
-    resolutions.find((resolution) => {
+  const result = resolutions.find((resolution) => {
       return resolution.width === width && resolution.height === height;
     }) || resolutions.find((resolution) => {
       return width >= resolution.width && height >= resolution.height;
-    })
-  );
+    });
 
   if (result) {
     return {

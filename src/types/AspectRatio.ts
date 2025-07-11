@@ -29,6 +29,9 @@
  * Aspect ratio in a string presentation, consisting of two numbers separated
  * from each other with a colon (`:`); For example, `16:9`, `4:3`, `2:2`, `1.90:1` and
  * so-on.
+ *
+ * @group Resolution
+ * @category Types
  */
 export type AspectRatio = `${number}:${number}` | string;
 
