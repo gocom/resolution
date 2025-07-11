@@ -4,7 +4,7 @@
 
 # @gocom/resolution
 
-## Resolution
+## Library
 
 ### Public
 

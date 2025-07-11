@@ -11,7 +11,7 @@ Public API.
 Identify pixel resolutions and dimension strings, convert raw resolutions to human-readable
 1080p, 4K and 8K, and so-on, identifiers.
 
-## Resolution
+## Library
 
 ### API
 

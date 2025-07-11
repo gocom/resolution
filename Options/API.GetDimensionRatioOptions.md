@@ -6,9 +6,11 @@
 
 # Interface: GetDimensionRatioOptions
 
-Defined in: [types/DimensionRatio.ts:43](https://github.com/gocom/resolution/blob/35516f4c70acda51ccc32c2c2e18319df7b05201/src/types/DimensionRatio.ts#L43)
+Defined in: [types/DimensionRatio.ts:45](https://github.com/gocom/resolution/blob/dc8a324ffbf191417b76e5dc1bd072842561b49b/src/types/DimensionRatio.ts#L45)
 
 Get dimension ratio options.
+
+Available options for [getDimensionRatio](../API/API.getDimensionRatio.md).
 
 ## Properties
 
@@ -16,7 +18,7 @@ Get dimension ratio options.
 
 > **height**: `number`
 
-Defined in: [types/DimensionRatio.ts:56](https://github.com/gocom/resolution/blob/35516f4c70acda51ccc32c2c2e18319df7b05201/src/types/DimensionRatio.ts#L56)
+Defined in: [types/DimensionRatio.ts:58](https://github.com/gocom/resolution/blob/dc8a324ffbf191417b76e5dc1bd072842561b49b/src/types/DimensionRatio.ts#L58)
 
 Pixel height.
 
@@ -28,7 +30,7 @@ A height from which the dimension ratio is calculated from.
 
 > **width**: `number`
 
-Defined in: [types/DimensionRatio.ts:49](https://github.com/gocom/resolution/blob/35516f4c70acda51ccc32c2c2e18319df7b05201/src/types/DimensionRatio.ts#L49)
+Defined in: [types/DimensionRatio.ts:51](https://github.com/gocom/resolution/blob/dc8a324ffbf191417b76e5dc1bd072842561b49b/src/types/DimensionRatio.ts#L51)
 
 Pixel width.
 

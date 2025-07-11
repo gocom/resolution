@@ -6,9 +6,11 @@
 
 # Interface: GetResolutionOptions
 
-Defined in: [types/Resolution.ts:71](https://github.com/gocom/resolution/blob/35516f4c70acda51ccc32c2c2e18319df7b05201/src/types/Resolution.ts#L71)
+Defined in: [types/Resolution.ts:73](https://github.com/gocom/resolution/blob/dc8a324ffbf191417b76e5dc1bd072842561b49b/src/types/Resolution.ts#L73)
 
 Get resolution options.
+
+Available options for [getResolution](../API/API.getResolution.md).
 
 ## Properties
 
@@ -16,7 +18,7 @@ Get resolution options.
 
 > `optional` **aspectRatio**: `string`
 
-Defined in: [types/Resolution.ts:100](https://github.com/gocom/resolution/blob/35516f4c70acda51ccc32c2c2e18319df7b05201/src/types/Resolution.ts#L100)
+Defined in: [types/Resolution.ts:102](https://github.com/gocom/resolution/blob/dc8a324ffbf191417b76e5dc1bd072842561b49b/src/types/Resolution.ts#L102)
 
 Optional aspect ratio.
 
@@ -37,7 +39,7 @@ from the width and height.
 
 > **height**: `number`
 
-Defined in: [types/Resolution.ts:84](https://github.com/gocom/resolution/blob/35516f4c70acda51ccc32c2c2e18319df7b05201/src/types/Resolution.ts#L84)
+Defined in: [types/Resolution.ts:86](https://github.com/gocom/resolution/blob/dc8a324ffbf191417b76e5dc1bd072842561b49b/src/types/Resolution.ts#L86)
 
 Pixel height.
 
@@ -49,7 +51,7 @@ A matching named resolution definition is looked up by the given height.
 
 > **width**: `number`
 
-Defined in: [types/Resolution.ts:77](https://github.com/gocom/resolution/blob/35516f4c70acda51ccc32c2c2e18319df7b05201/src/types/Resolution.ts#L77)
+Defined in: [types/Resolution.ts:79](https://github.com/gocom/resolution/blob/dc8a324ffbf191417b76e5dc1bd072842561b49b/src/types/Resolution.ts#L79)
 
 Pixel width.
 
