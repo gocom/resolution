@@ -34,16 +34,15 @@ import {getDimensionRatio} from './DimensionRatio';
  * Identifies the given resolution based on the given options, returning matching {@link Resolution}
  * definition. Recognized named resolutions are defined in {@link resolutions}.
  *
- * If {@link GetResolutionOptions.aspectRatio} is given, the function first goes through the {@link resolutions}
- * looking for a resolution definition that uses the same aspect ratio, and which total number of pixels is the same, or
- * greater than the given dimensions total pixel count. If no {@link GetResolutionOptions.aspectRatio} is given, the
- * looked up aspect ratio is calculated from the given {@link GetResolutionOptions.width} and
- * {@link GetResolutionOptions.height} using the same logic used by the {@link getAspectRatio} function.
+ * If {@link GetResolutionOptions.aspectRatio} is given, the function first goes through the resolutions
+ * looking for a resolution definition that has the same aspect ratio, and whose total number of pixels is the same, or
+ * greater than the given dimensions total pixel count. If no aspect ratio is given, the looked up aspect ratio is
+ * calculated from the given {@link GetResolutionOptions.width} and {@link GetResolutionOptions.height} using the
+ * same logic used by the {@link getAspectRatio} function.
  *
- * If no match is found with the same aspect ratio, the function looks for an exact
- * {@link GetResolutionOptions.width} and {@link GetResolutionOptions.height} combination from the defined resolutions.
- * If no exact match is found, it looks for the highest resolution, which both the width and
- * the height is equal or higher than the given width and the height.
+ * If no match is found with the same aspect ratio, the function looks for an exact matching width and height
+ * combination from the defined resolutions. If no exact match is found, it looks for the highest resolution, whose
+ * both the width and the height is equal or higher than the given width and the height.
  *
  * @param {GetResolutionOptions} options Options
  * @return {Resolution|undefined} Returns either {@link Resolution} object, or undefined if the resolution could not
