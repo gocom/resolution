@@ -8,23 +8,22 @@
 
 > **getResolution**(`options`): `undefined` \| [`Resolution`](../Types/API.Resolution.md)
 
-Defined in: [library/Resolution.ts:68](https://github.com/gocom/resolution/blob/13851e8fe8c51823fc6a2553ed3b103afc1e8885/src/library/Resolution.ts#L68)
+Defined in: [library/Resolution.ts:67](https://github.com/gocom/resolution/blob/71b3ec607fff6a846b2ca9bab40c4797a35335ad/src/library/Resolution.ts#L67)
 
 Gets resolution definition for the given width and height.
 
 Identifies the given resolution based on the given options, returning matching [Resolution](../Types/API.Resolution.md)
 definition. Recognized named resolutions are defined in [resolutions](../Internal/Private.resolutions.md).
 
-If [GetResolutionOptions.aspectRatio](../Options/API.GetResolutionOptions.md#aspectratio) is given, the function first goes through the [resolutions](../Internal/Private.resolutions.md)
-looking for a resolution definition that uses the same aspect ratio, and which total number of pixels is the same, or
-greater than the given dimensions total pixel count. If no [GetResolutionOptions.aspectRatio](../Options/API.GetResolutionOptions.md#aspectratio) is given, the
-looked up aspect ratio is calculated from the given [GetResolutionOptions.width](../Options/API.GetResolutionOptions.md#width) and
-[GetResolutionOptions.height](../Options/API.GetResolutionOptions.md#height) using the same logic used by the [getAspectRatio](API.getAspectRatio.md) function.
+If [GetResolutionOptions.aspectRatio](../Options/API.GetResolutionOptions.md#aspectratio) is given, the function first goes through the resolutions
+looking for a resolution definition that has the same aspect ratio, and whose total number of pixels is the same, or
+greater than the given dimensions total pixel count. If no aspect ratio is given, the looked up aspect ratio is
+calculated from the given [GetResolutionOptions.width](../Options/API.GetResolutionOptions.md#width) and [GetResolutionOptions.height](../Options/API.GetResolutionOptions.md#height) using the
+same logic used by the [getAspectRatio](API.getAspectRatio.md) function.
 
-If no match is found with the same aspect ratio, the function looks for an exact
-[GetResolutionOptions.width](../Options/API.GetResolutionOptions.md#width) and [GetResolutionOptions.height](../Options/API.GetResolutionOptions.md#height) combination from the defined resolutions.
-If no exact match is found, it looks for the highest resolution, which both the width and
-the height is equal or higher than the given width and the height.
+If no match is found with the same aspect ratio, the function looks for an exact matching width and height
+combination from the defined resolutions. If no exact match is found, it looks for the highest resolution, whose
+both the width and the height is equal or higher than the given width and the height.
 
 ## Parameters
 
