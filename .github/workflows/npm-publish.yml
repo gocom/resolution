@@ -10,6 +10,10 @@ jobs:
     name: Build and publish package
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      id-token: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -37,4 +41,4 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           npm config set "//registry.npmjs.org/:_authToken" "$NPM_TOKEN"
-          npm publish --access public
+          npm publish --provenance --access public

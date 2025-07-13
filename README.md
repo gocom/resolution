@@ -1,9 +1,11 @@
 Resolution
 =====
 
+[![npm](https://img.shields.io/npm/v/%40gocom%2Fresolution)](https://www.npmjs.com/package/@gocom/resolution) ![MIT](https://img.shields.io/badge/license-MIT-green) ![npm](https://img.shields.io/badge/types-TypeScript-blue)
+
 Identify pixel resolutions and dimension strings. Offers a library for parsing given pixel resolution values and
 returning  resulting aspect ratios, or human-readable short name identifiers. The main use-case for the library would
-be converting raw resolution  dimensions to 1080p, 4K and 8K, and so-on, identifiers. Written in JavaScript and supports
+be converting raw resolution  dimensions to 1080p, 4K and 8K, and so-on, identifiers. Written in TypeScript and supports
 both client-side browser and Node.js backend contexts.
 
 Install
