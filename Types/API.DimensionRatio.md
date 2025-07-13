@@ -8,7 +8,7 @@
 
 > **DimensionRatio** = `number`
 
-Defined in: [types/DimensionRatio.ts:35](https://github.com/gocom/resolution/blob/fe38df115b0206b77ced4aa3e6fe703da1f4cca1/src/types/DimensionRatio.ts#L35)
+Defined in: [types/DimensionRatio.ts:35](https://github.com/gocom/resolution/blob/fbba44585a7fc140777949eab3a6d853e25d42f9/src/types/DimensionRatio.ts#L35)
 
 Dimension ratio.
 
