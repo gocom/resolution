@@ -6,7 +6,7 @@
 
 # Interface: GetAspectRatioOptions
 
-Defined in: [types/AspectRatio.ts:46](https://github.com/gocom/resolution/blob/71b3ec607fff6a846b2ca9bab40c4797a35335ad/src/types/AspectRatio.ts#L46)
+Defined in: [types/AspectRatio.ts:46](https://github.com/gocom/resolution/blob/fe38df115b0206b77ced4aa3e6fe703da1f4cca1/src/types/AspectRatio.ts#L46)
 
 Get aspect ratio options.
 
@@ -18,7 +18,7 @@ Available options for [getAspectRatio](../API/API.getAspectRatio.md).
 
 > **height**: `number`
 
-Defined in: [types/AspectRatio.ts:59](https://github.com/gocom/resolution/blob/71b3ec607fff6a846b2ca9bab40c4797a35335ad/src/types/AspectRatio.ts#L59)
+Defined in: [types/AspectRatio.ts:59](https://github.com/gocom/resolution/blob/fe38df115b0206b77ced4aa3e6fe703da1f4cca1/src/types/AspectRatio.ts#L59)
 
 Pixel height.
 
@@ -30,7 +30,7 @@ A height from which the aspect ratio string is calculated from.
 
 > **width**: `number`
 
-Defined in: [types/AspectRatio.ts:52](https://github.com/gocom/resolution/blob/71b3ec607fff6a846b2ca9bab40c4797a35335ad/src/types/AspectRatio.ts#L52)
+Defined in: [types/AspectRatio.ts:52](https://github.com/gocom/resolution/blob/fe38df115b0206b77ced4aa3e6fe703da1f4cca1/src/types/AspectRatio.ts#L52)
 
 Pixel width.
 

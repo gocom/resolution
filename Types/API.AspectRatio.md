@@ -8,7 +8,7 @@
 
 > **AspectRatio** = `` `${number}:${number}` `` \| `string`
 
-Defined in: [types/AspectRatio.ts:36](https://github.com/gocom/resolution/blob/71b3ec607fff6a846b2ca9bab40c4797a35335ad/src/types/AspectRatio.ts#L36)
+Defined in: [types/AspectRatio.ts:36](https://github.com/gocom/resolution/blob/fe38df115b0206b77ced4aa3e6fe703da1f4cca1/src/types/AspectRatio.ts#L36)
 
 Aspect ratio.
 
