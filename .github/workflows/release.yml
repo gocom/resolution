@@ -25,26 +25,13 @@ jobs:
           echo "$GITHUB_REF" | cut -d / -f 3 >> $GITHUB_OUTPUT
           echo "VERSIONEOF" >> $GITHUB_OUTPUT
 
-      - name: Get prerelease state
-        id: prerelease
-        run: |
-          echo "contents<<EOF" >> $GITHUB_OUTPUT
-
-          if [[ "${{ steps.version.outputs.contents }} = *"-"* ]]; then
-            echo "true" >> $GITHUB_OUTPUT
-          else
-            echo "false" >> $GITHUB_OUTPUT
-          fi
-
-          echo "EOF" >> $GITHUB_OUTPUT
-
       - name: Generate release notes
         id: changelog
         run: make generate-release-notes VERSION=${{ steps.version.outputs.contents }}
 
-      - name: Create release
+      - name: Create pre-release
         id: create_release
         uses: shogo82148/actions-create-release@v1
         with:
           body_path: ${{ github.workspace }}/RELEASE-NOTES.md
-          prerelease: ${{ steps.prerelease.outputs.contents }}
+          prerelease: ${{ contains(steps.version.outputs.contents, '-') }}
