@@ -40,9 +40,11 @@ generate-release-notes:
 	./dev/bin/release-notes "$(VERSION)" > RELEASE-NOTES.md
 
 pre-publish:
-	$(NPM) version "$(VERSION)" --no-commit-hooks --no-git-tag-version
-	./dev/bin/release-readme "$(VERSION)" > README.md
-	./dev/bin/release-changelog "$(VERSION)" > CHANGELOG.md
+	$(NPM) version "$(VERSION)" --no-commit-hooks --no-git-tag-version --allow-same-version
+	./dev/bin/release-readme "$(VERSION)" > .README.md.tmp
+	mv .README.md.tmp README.md
+	./dev/bin/release-changelog "$(VERSION)" > .CHANGELOG.md.tmp
+	mv .CHANGELOG.md.tmp CHANGELOG.md
 
 help:
 	@echo "Manage project"
@@ -76,7 +78,7 @@ help:
 	@echo "  Package project locally"
 	@echo ""
 	@echo "  $$ make pre-publish VERSION=<version>"
-	@echo "  Updates README.md for package publish"
+	@echo "  Updates README.md and CHANGELOG.md for package publishing"
 	@echo ""
 	@echo "  $$ make rebuild"
 	@echo "  Clean dist directory before building"

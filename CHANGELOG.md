@@ -9,7 +9,10 @@ release.
 
 ## 0.1.0-alpha.4
 
-* Fixing issue with GitHub release creation in CI. This tagged release is for testing the CI.
+* Fixing issue with GitHub release creation in CI.
+* Fixing issue with README.md and CHANGELOG.md update during npm publish CI. They ended up as empty files inside the
+  created tgz.
+* This release is tagged for testing the CI. Contains no runtime or code changes.
 
 ## 0.1.0-alpha.3
 
