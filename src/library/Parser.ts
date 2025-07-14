@@ -30,9 +30,14 @@ import type {Dimensions, ParserOptions} from '../types/Parser';
 /**
  * Parses the given dimensions string.
  *
+ * Identifies the given resolution based on the given resolution string, returning matching resolution
+ * definition. The logic works identically to {@link getResolution} function; see it for more information
+ * about the underlying logic.
+ *
  * @param {Dimensions} dimensions Dimensions string, two numbers separated from each other with `x`. For example
  * `1920x1080`, `6144x3072` and so-on.
- * @param {ParserOptions} [options] Optional additional options.
+ * @param {ParserOptions} [options] Optional additional options. Given options will be passed down
+ * to {@link getResolution}.
  * @return {Resolution|undefined} Returns the results as {@link Resolution} object, or undefined if the given dimensions
  * string could not be parsed.
  * @group Library
