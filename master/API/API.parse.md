@@ -8,9 +8,13 @@
 
 > **parse**(`dimensions`, `options?`): `undefined` \| [`Resolution`](../Types/API.Resolution.md)
 
-Defined in: [library/Parser.ts:54](https://github.com/gocom/resolution/blob/249fdde0f2e9f5ebe9b58b9aba024524dfe024cb/src/library/Parser.ts#L54)
+Defined in: [library/Parser.ts:59](https://github.com/gocom/resolution/blob/0a02f95025955b8478c1eb59d63155c5875ff541/src/library/Parser.ts#L59)
 
 Parses the given dimensions string.
+
+Identifies the given resolution based on the given resolution string, returning matching resolution
+definition. The logic works identically to [getResolution](API.getResolution.md) function; see it for more information
+about the underlying logic.
 
 ## Parameters
 
@@ -25,7 +29,8 @@ Dimensions string, two numbers separated from each other with `x`. For example
 
 [`ParserOptions`](../Options/API.ParserOptions.md)
 
-Optional additional options.
+Optional additional options. Given options will be passed down
+to [getResolution](API.getResolution.md).
 
 ## Returns
 

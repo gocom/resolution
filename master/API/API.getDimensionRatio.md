@@ -8,7 +8,7 @@
 
 > **getDimensionRatio**(`options`): `undefined` \| `number`
 
-Defined in: [library/DimensionRatio.ts:60](https://github.com/gocom/resolution/blob/249fdde0f2e9f5ebe9b58b9aba024524dfe024cb/src/library/DimensionRatio.ts#L60)
+Defined in: [library/DimensionRatio.ts:60](https://github.com/gocom/resolution/blob/0a02f95025955b8478c1eb59d63155c5875ff541/src/library/DimensionRatio.ts#L60)
 
 Calculates dimension ratio number from the given width and height.
 

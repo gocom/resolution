@@ -8,7 +8,7 @@
 
 > **Dimensions** = `` `${number}x${number}` `` \| `string`
 
-Defined in: [types/Parser.ts:37](https://github.com/gocom/resolution/blob/249fdde0f2e9f5ebe9b58b9aba024524dfe024cb/src/types/Parser.ts#L37)
+Defined in: [types/Parser.ts:37](https://github.com/gocom/resolution/blob/0a02f95025955b8478c1eb59d63155c5875ff541/src/types/Parser.ts#L37)
 
 Resolution dimensions.
 
