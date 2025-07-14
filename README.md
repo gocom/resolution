@@ -1,15 +1,10 @@
-**@gocom/resolution**
+API Docs
+=====
 
-***
+This branch contains API documentation for each version.
 
-# @gocom/resolution
+Versions
+-----
 
-## Library
-
-### Public
-
-- [API](Public/API.md)
-
-### Internal
-
-- [Private](Internal/Private.md)
+For development documentation see [master/Public/API.md](master/Public/API.md), or pick some other directory from
+the branch matching the version you want.
