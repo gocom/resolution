@@ -62,9 +62,11 @@ the `package.json` file is not necessary, as CI sync it during build time with t
 
 ### Manually testing publishing
 
-This is not required, but if you want to test publishing before tagging, you can run the same building command CI uses:
+This is not required, but if you want to test publishing before tagging, you can run the same building command CI uses.
+Please note that the `make pre-publish` modifies the project files:
 
 ```shell
+$ make pre-publish VERSION=0.1.0
 $ make rebuild
 ```
 

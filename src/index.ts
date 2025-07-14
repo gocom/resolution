@@ -24,14 +24,29 @@
  */
 
 /**
- * Public API.
+ * Resolution allows identifying pixel resolutions and dimension strings.
  *
- * Identify pixel resolutions and dimension strings, convert raw resolutions to human-readable
- * 1080p, 4K and 8K, and so-on, identifiers.
+ * Convert raw resolutions to human-readable 1080p, 4K and 8K, and other identifiers, and calculate aspect ratios.
+ * Written in TypeScript, and supports both client-side web browser and Node.js backend usage.
+ *
+ * ## Install
+ *
+ * The package can be installed to your project using npm, or an equivalent, package manager:
+ *
+ * ```shell
+ * npm install @gocom/resolution
+ * ```
+ *
+ * ## License
+ *
+ * [MIT](https://github.com/gocom/resolution/blob/master/LICENSE).
  *
  * @module API
  * @group Library
  * @category Public
+ * @see [Package in npm registry](https://www.npmjs.com/package/@gocom/resolution)
+ * @see [Releases](https://github.com/gocom/resolution/releases)
+ * @see [GitHub](https://github.com/gocom/resolution)
  */
 
 export {

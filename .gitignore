@@ -8,4 +8,5 @@
 /docs/
 /node_modules/
 /test-reports/
+/RELEASE-NOTES.md
 package-lock.json

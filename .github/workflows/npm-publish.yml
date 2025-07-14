@@ -30,8 +30,8 @@ jobs:
           echo "$GITHUB_REF" | cut -d / -f 3 >> $GITHUB_OUTPUT
           echo "VERSIONEOF" >> $GITHUB_OUTPUT
 
-      - name: Update version number
-        run: npm version ${{ steps.version.outputs.contents }} --no-commit-hooks --no-git-tag-version
+      - name: Pre-publish
+        run: make pre-publish VERSION=${{ steps.version.outputs.contents }}
 
       - name: Build
         run: make build

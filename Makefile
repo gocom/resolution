@@ -1,4 +1,4 @@
-.PHONY: all build clean generate-docs help install lint pack publish rebuild test watch
+.PHONY: all build clean generate-docs generate-release-notes help install lint pack pre-publish rebuild test watch
 
 NPM = npm
 
@@ -36,11 +36,21 @@ watch: node_modules
 generate-docs: install
 	$(NPM) run generate-docs
 
+generate-release-notes:
+	./dev/bin/release-notes "$(VERSION)" > RELEASE-NOTES.md
+
+pre-publish:
+	$(NPM) version "$(VERSION)" --no-commit-hooks --no-git-tag-version
+	./dev/bin/release-readme "$(VERSION)" > README.md
+	./dev/bin/release-changelog "$(VERSION)" > CHANGELOG.md
+
 help:
 	@echo "Manage project"
 	@echo ""
 	@echo "Usage:"
-	@echo "  $$ make [command]"
+	@echo "  $$ make [command] ["
+	@echo "    [VERSION=<version>]"
+	@echo "  ]"
 	@echo ""
 	@echo "Commands:"
 	@echo ""
@@ -50,6 +60,12 @@ help:
 	@echo "  $$ make clean"
 	@echo "  Clean installed dependencies and artifacts"
 	@echo ""
+	@echo "  $$ make generate-docs"
+	@echo "  Build API docs"
+	@echo ""
+	@echo "  $$ make generate-release-notes VERSION=<version>"
+	@echo "  Build release notes"
+	@echo ""
 	@echo "  $$ make install"
 	@echo "  Install dependencies and build project"
 	@echo ""
@@ -58,6 +74,9 @@ help:
 	@echo ""
 	@echo "  $$ make pack"
 	@echo "  Package project locally"
+	@echo ""
+	@echo "  $$ make pre-publish VERSION=<version>"
+	@echo "  Updates README.md for package publish"
 	@echo ""
 	@echo "  $$ make rebuild"
 	@echo "  Clean dist directory before building"
