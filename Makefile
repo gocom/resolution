@@ -1,4 +1,4 @@
-.PHONY: all build clean generate-docs generate-release-notes help install lint pack pre-publish rebuild test watch
+.PHONY: all build clean generate-docs generate-release-notes help install lint lint-fix pack pre-publish rebuild test watch
 
 NPM = npm
 
@@ -16,6 +16,9 @@ clean:
 
 lint: node_modules
 	$(NPM) run lint
+
+lint-fix: node_modules
+	$(NPM) run lint:fix
 
 node_modules:
 	$(NPM) install
@@ -73,6 +76,9 @@ help:
 	@echo ""
 	@echo "  $$ make lint"
 	@echo "  Lint code style"
+	@echo ""
+	@echo "  $$ make lint-fix"
+	@echo "  Try to fix code style issues"
 	@echo ""
 	@echo "  $$ make pack"
 	@echo "  Package project locally"

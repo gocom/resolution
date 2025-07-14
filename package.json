@@ -6,6 +6,7 @@
     "build": "tsc",
     "generate-docs": "typedoc",
     "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "test": "jest",
     "watch": "tsc --watch"
   },

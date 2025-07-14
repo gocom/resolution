@@ -1,25 +1,30 @@
 Contributing
 =====
 
+Please take a quick look at this document before to make contribution process easier for all parties involved.
+
 License
 -----
 
-[MIT](https://raw.github.com/gocom/resolution/master/LICENSE).
+[MIT](https://raw.github.com/gocom/resolution/master/LICENSE). By contributing code, you agree to license your additions
+under the MIT license.
 
 Versioning
 -----
 
-[Semantic Versioning](https://semver.org/).
+The project follows [Semantic Versioning](https://semver.org/). Keep backwards compatibility in mind when you propose
+or contribute changes, especially if the change affects the public API.
 
-Requirements
+Development environment
 -----
+
+### Requirements
 
 * GNU make
 * Node.js
 * npm
 
-Setup project locally
------
+### Setup project locally
 
 Clone the repository, or a fork of it, and run the installer:
 
@@ -27,8 +32,7 @@ Clone the repository, or a fork of it, and run the installer:
 $ make install
 ````
 
-Development
------
+### Available commands
 
 For available commands, see:
 
@@ -36,18 +40,42 @@ For available commands, see:
 $ make help
 ```
 
-Publishing
+Automated commands can be run using `make`, which wraps around `npm`, and other development tooling.
+
+### Working on code
+
+When making changes to code please make sure that linter and tests pass before opening a pull request. Linter
+can be run with:
+
+```shell
+$ make lint
+```
+
+Unit tests can be run with:
+
+```shell
+$ make test
+```
+
+If you are opening a PR to the repository, uou do not need to update CHANGELOG.md. We will take care of compiling it
+before new release is published. After tests pass, fell free to open PR to the repository.
+
+For maintainers
 -----
+
+These instructions are meant for repository's core maintainers.
+
+### Publishing
 
 CI automatically publishes any git tags to the npm registry.
 
-### Update changelog
+#### Update changelog
 
 Before tagging a commit, make sure that [CHANGELOG.md](https://raw.github.com/gocom/resolution/master/CHANGELOG.md)
 is up-to-date. The top most section and the version number in the heading should match the new tag you are about
 to create.
 
-### Tagging release
+#### Tagging release
 
 To publish a new version, simply create a tag and push it:
 
@@ -60,7 +88,7 @@ The above would create publish the tag as `0.1.0` to the npm registry, and creat
 a section with matching header from the CHANGELOG.md as the release's description. Updating version number in
 the `package.json` file is not necessary, as CI sync it during build time with the tag.
 
-### Manually testing publishing
+#### Manually testing publishing
 
 This is not required, but if you want to test publishing before tagging, you can run the same building command CI uses.
 Please note that the `make pre-publish` modifies the project files:
