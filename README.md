@@ -1,7 +1,7 @@
 Resolution
 =====
 
-[![npm](https://img.shields.io/npm/v/%40gocom%2Fresolution)](https://www.npmjs.com/package/@gocom/resolution) ![MIT](https://img.shields.io/badge/license-MIT-green) ![TypeScript](https://img.shields.io/badge/types-TypeScript-blue)
+[![npm](https://img.shields.io/npm/v/%40gocom%2Fresolution)](https://www.npmjs.com/package/@gocom/resolution) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gocom_resolution&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=gocom_resolution) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=gocom_resolution&metric=coverage)](https://sonarcloud.io/summary/new_code?id=gocom_resolution) ![MIT](https://img.shields.io/badge/license-MIT-green) ![TypeScript](https://img.shields.io/badge/types-TypeScript-blue)
 
 Identify pixel resolutions, dimension strings and aspect ratios. Offers a library for parsing given pixel resolution
 values and returning  resulting aspect ratios, or human-readable short name identifiers. The main use-case for
