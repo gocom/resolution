@@ -23,7 +23,7 @@ $ npm install @gocom/resolution
 See [API Docs](https://github.com/gocom/resolution/blob/docs/master/Public/API.md).
 
 📝 Example Usage
-----
+-----
 
 ### Parsing resolution dimensions string
 

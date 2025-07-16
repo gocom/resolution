@@ -31,8 +31,17 @@ main () {
     exit 1
   fi
 
-  sed "s/\/master\//\/$version\//" README.md
+  # Header.
+  cat <<EOF
+Resolution
+-----
+EOF
 
+  # Remove badges, replace branch URL references with the version tag.
+  sed -e "1,/\[/d" -e '/🛠️ Development/,$d' README.md \
+    | sed "s/\/master\//\/$version\//"
+
+  # Add changes section.
   notes="$(sed -e "1,/## $version/d" -e '/##/,$d' CHANGELOG.md)"
 
   if [ "$notes" ]; then
@@ -41,6 +50,8 @@ main () {
 🚀 Changes in $version
 -----
 $notes
+
+For changes in previous versions, see [CHANGELOG.md](https://github.com/gocom/resolution/blob/$version/CHANGELOG.md).
 
 EOF
   fi
