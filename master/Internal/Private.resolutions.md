@@ -8,7 +8,7 @@
 
 > `const` **resolutions**: [`ResolutionDefinition`](../Types/Private.ResolutionDefinition.md)[]
 
-Defined in: [library/ResolutionDefinition.ts:42](https://github.com/gocom/resolution/blob/04fbf4ab90237913f15a6ec145c20650eaf43d7b/src/library/ResolutionDefinition.ts#L42)
+Defined in: [library/ResolutionDefinition.ts:42](https://github.com/gocom/resolution/blob/b75f0c62e61cace687e1c308138151b4331f75b0/src/library/ResolutionDefinition.ts#L42)
 
 Recognized resolutions.
 
