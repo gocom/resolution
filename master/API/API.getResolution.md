@@ -8,7 +8,7 @@
 
 > **getResolution**(`options`): `undefined` \| [`Resolution`](../Types/API.Resolution.md)
 
-Defined in: [library/Resolution.ts:67](https://github.com/gocom/resolution/blob/1862825057d0bb9ab703d7c258946cef481eca14/src/library/Resolution.ts#L67)
+Defined in: [library/Resolution.ts:67](https://github.com/gocom/resolution/blob/04fbf4ab90237913f15a6ec145c20650eaf43d7b/src/library/Resolution.ts#L67)
 
 Gets resolution definition for the given width and height.
 
