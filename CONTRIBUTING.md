@@ -18,11 +18,14 @@ or contribute changes, especially if the change affects the public API.
 Development environment
 -----
 
+The local development environment uses nvm through Makefile wrapper to manage Node and npm version.
+
 ### Requirements
 
 * GNU make
-* Node.js
-* npm
+* [nvm](https://github.com/nvm-sh/nvm)
+
+If nvm is not installed, the Makefile defaults to any node and npm binaries found from PATH.
 
 ### Setup project locally
 

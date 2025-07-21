@@ -1,12 +1,18 @@
-.PHONY: all build clean generate-docs generate-release-notes help install lint lint-fix pack pre-publish rebuild test watch
+.PHONY: all build build-destroy clean generate-docs generate-release-notes help install lint lint-fix nvm pack pre-publish rebuild test watch
+.ONESHELL:
 
+NVM ?= ${HOME}/.nvm/nvm.sh
 NPM = npm
 
 all: build
 install: node_modules dist
 
-build: node_modules
+build: nvm node_modules
 	$(NPM) run build
+
+build-destroy:
+	@echo "Removing existing build"
+	@rm -rf dist
 
 dist:
 	$(NPM) run build
@@ -14,18 +20,30 @@ dist:
 clean:
 	rm -rf dist docs node_modules package-lock.json test-reports
 
-lint: node_modules
+lint: nvm node_modules
 	$(NPM) run lint
 
-lint-fix: node_modules
+lint-fix: nvm node_modules
 	$(NPM) run lint:fix
 
-node_modules:
+node_modules: nvm
+ifeq (,$(wildcard node_modules))
 	$(NPM) install
+endif
 
-rebuild:
-	rm -rf dist
-	$(MAKE) build
+nvm:
+ifneq ("$(wildcard $(NVM))", "")
+	@. $(NVM)
+	@if ! nvm use; then
+	@	nvm install
+	@	nvm use
+	@fi
+else
+	@echo "nvm not found at $(NVM)"
+	@echo "Will use any node and npm from PATH"
+endif
+
+rebuild: build-destroy build
 
 pack: install
 	$(NPM) pack
@@ -42,7 +60,7 @@ generate-docs: install
 generate-release-notes:
 	./dev/bin/release-notes "$(VERSION)" > RELEASE-NOTES.md
 
-pre-publish:
+pre-publish: nvm
 	$(NPM) version "$(VERSION)" --no-commit-hooks --no-git-tag-version --allow-same-version
 	./dev/bin/release-readme "$(VERSION)" > .README.md.tmp
 	mv .README.md.tmp README.md

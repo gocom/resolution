@@ -3,6 +3,7 @@
 !.gitignore
 !.editorconfig
 !.npmignore
+!.nvmrc
 /*.tgz
 /dist/
 /docs/
