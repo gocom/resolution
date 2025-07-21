@@ -1,7 +1,8 @@
 .PHONY: all build build-destroy clean generate-docs generate-release-notes help install lint lint-fix nvm pack pre-publish rebuild test watch
 .ONESHELL:
 
-NVM ?= ${HOME}/.nvm/nvm.sh
+NVM_DIR ?= ${HOME}/.nvm
+NVM = ${NVM_DIR}/nvm.sh
 NPM = npm
 
 all: build
