@@ -6,9 +6,9 @@
 
 # Function: getResolution()
 
-> **getResolution**(`options`): `undefined` \| [`Resolution`](../Types/API.Resolution.md)
+> **getResolution**(`options`): [`Resolution`](../Types/API.Resolution.md) \| `undefined`
 
-Defined in: [library/Resolution.ts:67](https://github.com/gocom/resolution/blob/b75f0c62e61cace687e1c308138151b4331f75b0/src/library/Resolution.ts#L67)
+Defined in: [library/Resolution.ts:67](https://github.com/gocom/resolution/blob/6dad9d2344c174dd771d0722e3ad01874dfb8c4f/src/library/Resolution.ts#L67)
 
 Gets resolution definition for the given width and height.
 
@@ -35,7 +35,7 @@ Options
 
 ## Returns
 
-`undefined` \| [`Resolution`](../Types/API.Resolution.md)
+[`Resolution`](../Types/API.Resolution.md) \| `undefined`
 
 Returns either [Resolution](../Types/API.Resolution.md) object, or undefined if the resolution could not
 be recognized.

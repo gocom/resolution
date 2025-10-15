@@ -6,9 +6,9 @@
 
 # Function: getDimensionRatio()
 
-> **getDimensionRatio**(`options`): `undefined` \| `number`
+> **getDimensionRatio**(`options`): `number` \| `undefined`
 
-Defined in: [library/DimensionRatio.ts:60](https://github.com/gocom/resolution/blob/b75f0c62e61cace687e1c308138151b4331f75b0/src/library/DimensionRatio.ts#L60)
+Defined in: [library/DimensionRatio.ts:60](https://github.com/gocom/resolution/blob/6dad9d2344c174dd771d0722e3ad01874dfb8c4f/src/library/DimensionRatio.ts#L60)
 
 Calculates dimension ratio number from the given width and height.
 
@@ -25,7 +25,7 @@ Options.
 
 ## Returns
 
-`undefined` \| `number`
+`number` \| `undefined`
 
 Either [DimensionRatio](../Types/API.DimensionRatio.md), or `undefined` if calculating dimension ratio
 failed for the given options.

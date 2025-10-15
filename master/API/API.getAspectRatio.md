@@ -6,9 +6,9 @@
 
 # Function: getAspectRatio()
 
-> **getAspectRatio**(`options`): `undefined` \| `string`
+> **getAspectRatio**(`options`): `string` \| `undefined`
 
-Defined in: [library/AspectRatio.ts:62](https://github.com/gocom/resolution/blob/b75f0c62e61cace687e1c308138151b4331f75b0/src/library/AspectRatio.ts#L62)
+Defined in: [library/AspectRatio.ts:62](https://github.com/gocom/resolution/blob/6dad9d2344c174dd771d0722e3ad01874dfb8c4f/src/library/AspectRatio.ts#L62)
 
 Calculates aspect ratio string from the given width and height.
 
@@ -26,7 +26,7 @@ Options
 
 ## Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 Either aspect ratio string, or `undefined` if calculating aspect ratio failed for
 the given options.

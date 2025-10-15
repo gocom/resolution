@@ -6,7 +6,7 @@
 
 # Interface: ResolutionDefinition
 
-Defined in: [types/ResolutionDefinition.ts:35](https://github.com/gocom/resolution/blob/b75f0c62e61cace687e1c308138151b4331f75b0/src/types/ResolutionDefinition.ts#L35)
+Defined in: [types/ResolutionDefinition.ts:35](https://github.com/gocom/resolution/blob/6dad9d2344c174dd771d0722e3ad01874dfb8c4f/src/types/ResolutionDefinition.ts#L35)
 
 Resolution definition.
 
@@ -20,7 +20,7 @@ Resolution definition.
 
 > `optional` **aspectRatio**: `string`
 
-Defined in: [types/ResolutionDefinition.ts:73](https://github.com/gocom/resolution/blob/b75f0c62e61cace687e1c308138151b4331f75b0/src/types/ResolutionDefinition.ts#L73)
+Defined in: [types/ResolutionDefinition.ts:73](https://github.com/gocom/resolution/blob/6dad9d2344c174dd771d0722e3ad01874dfb8c4f/src/types/ResolutionDefinition.ts#L73)
 
 Defined aspect ratio in string presentation.
 
@@ -36,7 +36,7 @@ so-on.
 
 > `optional` **dimensionRatio**: `number`
 
-Defined in: [types/ResolutionDefinition.ts:82](https://github.com/gocom/resolution/blob/b75f0c62e61cace687e1c308138151b4331f75b0/src/types/ResolutionDefinition.ts#L82)
+Defined in: [types/ResolutionDefinition.ts:82](https://github.com/gocom/resolution/blob/6dad9d2344c174dd771d0722e3ad01874dfb8c4f/src/types/ResolutionDefinition.ts#L82)
 
 Defined ratio between dimensions.
 
@@ -50,7 +50,7 @@ Returns the aspect ratio as a number ratio, for example `1.85`, `1.33`, `1.78` a
 
 > **group**: `string`
 
-Defined in: [types/ResolutionDefinition.ts:48](https://github.com/gocom/resolution/blob/b75f0c62e61cace687e1c308138151b4331f75b0/src/types/ResolutionDefinition.ts#L48)
+Defined in: [types/ResolutionDefinition.ts:48](https://github.com/gocom/resolution/blob/6dad9d2344c174dd771d0722e3ad01874dfb8c4f/src/types/ResolutionDefinition.ts#L48)
 
 Simplified grouped resolution name.
 
@@ -62,7 +62,7 @@ For instance, if the [ResolutionDefinition.name](API.Resolution.md#name) is `8K 
 
 > **height**: `number`
 
-Defined in: [types/ResolutionDefinition.ts:62](https://github.com/gocom/resolution/blob/b75f0c62e61cace687e1c308138151b4331f75b0/src/types/ResolutionDefinition.ts#L62)
+Defined in: [types/ResolutionDefinition.ts:62](https://github.com/gocom/resolution/blob/6dad9d2344c174dd771d0722e3ad01874dfb8c4f/src/types/ResolutionDefinition.ts#L62)
 
 Defined pixel height.
 
@@ -74,7 +74,7 @@ Resolutions definition's pixel height threshold.
 
 > **name**: `string`
 
-Defined in: [types/ResolutionDefinition.ts:41](https://github.com/gocom/resolution/blob/b75f0c62e61cace687e1c308138151b4331f75b0/src/types/ResolutionDefinition.ts#L41)
+Defined in: [types/ResolutionDefinition.ts:41](https://github.com/gocom/resolution/blob/6dad9d2344c174dd771d0722e3ad01874dfb8c4f/src/types/ResolutionDefinition.ts#L41)
 
 Human-readable name identification of the resolution.
 
@@ -86,7 +86,7 @@ For example, `8K UHD`, `8K`, `4K`, `1080p`, `480p` and so-on.
 
 > **width**: `number`
 
-Defined in: [types/ResolutionDefinition.ts:55](https://github.com/gocom/resolution/blob/b75f0c62e61cace687e1c308138151b4331f75b0/src/types/ResolutionDefinition.ts#L55)
+Defined in: [types/ResolutionDefinition.ts:55](https://github.com/gocom/resolution/blob/6dad9d2344c174dd771d0722e3ad01874dfb8c4f/src/types/ResolutionDefinition.ts#L55)
 
 Defined pixel width.
 

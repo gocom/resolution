@@ -6,9 +6,9 @@
 
 # Function: parse()
 
-> **parse**(`dimensions`, `options?`): `undefined` \| [`Resolution`](../Types/API.Resolution.md)
+> **parse**(`dimensions`, `options?`): [`Resolution`](../Types/API.Resolution.md) \| `undefined`
 
-Defined in: [library/Parser.ts:59](https://github.com/gocom/resolution/blob/b75f0c62e61cace687e1c308138151b4331f75b0/src/library/Parser.ts#L59)
+Defined in: [library/Parser.ts:59](https://github.com/gocom/resolution/blob/6dad9d2344c174dd771d0722e3ad01874dfb8c4f/src/library/Parser.ts#L59)
 
 Parses the given dimensions string.
 
@@ -34,7 +34,7 @@ to [getResolution](API.getResolution.md).
 
 ## Returns
 
-`undefined` \| [`Resolution`](../Types/API.Resolution.md)
+[`Resolution`](../Types/API.Resolution.md) \| `undefined`
 
 Returns the results as [Resolution](../Types/API.Resolution.md) object, or undefined if the given dimensions
 string could not be parsed.
